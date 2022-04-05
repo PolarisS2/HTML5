@@ -1,0 +1,83 @@
+<meta charset="utf-8">
+<h1><a href="index.html">메인화면</a></h1>
+
+<!-- form 태그안에 있는 input들은 하나의 데이터로 묶인다
+type submit 을 하면 form 태그안에 데이터는 모두 전송된다
+required 를 추가해주면 빈 값을 허용하지 않는다 -->
+
+<form>
+    <input type="text" placeholder="이름" required>
+    <input type="text" placeholder="나이" required>
+    <input type="text" placeholder="성별">
+    <input type="text" placeholder="주소">
+    <br>
+    <input type="submit" value="회원가입">
+</form>
+<br><br><br><br><br>
+<div style="width: 650px;">
+    
+<form>
+
+    <fieldset>
+        <legend>신청자</legend>
+        <label for="">이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" autofocus required>
+        <br>
+        <label for="">학번&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" required>
+        <br>
+        <label for="">생년월일</label>
+        <input type="text" required>
+    </fieldset>
+<br>
+
+    <fieldset>
+        <legend>수강과목</legend>
+            <select>
+                <option></option>
+                <option>데이터베이스</option>
+                <option>C언어</option>
+                <option>소프트웨어 플랫폼</option>
+                <option>JAVA</option>
+                <option>객체지향</option>
+                <option>알고리즘</option>
+            </select>
+    </fieldset>
+    <br>
+
+<fieldset>
+    <legend>희망과목 조사 (중복선택 가능)</legend>
+    <input type="checkbox" id="book1" >
+    <label for="book1">데이터베이스</label>
+    <input type="checkbox" id="book2" >
+    <label for="book2">c언어</label>
+    <input type="checkbox" id="book3" >
+    <label for="book3">소프트웨어 플랫폼</label>
+    <input type="checkbox" id="book4" >
+    <label for="book4">JAVA</label>
+    <input type="checkbox" id="book5" >
+    <label for="book5">객체지향</label>
+    <input type="checkbox" id="book6" >
+    <label for="book6">알고리즘</label>
+</fieldset>
+
+<br>
+
+<fieldset>
+    <legend>학생증</legend>
+    <lael for for=""></lael>
+    <input type="file">
+</fieldset>
+
+<br>
+
+<fieldset>
+    <legend>비고</legend>
+    <input type="submit" value="신청하기">
+    <input type="reset" value="다시작성">
+</fieldset>
+
+
+
+</form>
+</div>
