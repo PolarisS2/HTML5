@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션 바</title>
+</head>
+
+<style>
+body {
+    margin: 0;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    background-color: antiquewhite;
+    
+
+}
+
+li {
+    display: inline-block;
+    border-right: 2px solid #bbb;
+}
+
+/* n번째 자식 지정 */
+li:nth-child(5) {
+    border-right: none;
+}
+li:nth-child(6) {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* active 클래스가 아닌 a태그가 호버됐을때만 작동 */
+
+li a:hover:not(.active) {
+    background-color: burlywood;
+    color: white;
+}
+
+#divhome {
+    background-color: lightblue;
+}
+#divnews {
+    background-color: coral;
+}
+#divcontents {
+    background-color: lightcyan;
+}
+#divintro {
+    background-color: lightgoldenrodyellow;
+}
+#divdummy {
+    background-color: lightgreen
+    
+}
+
+#content {
+    /* margin-top: 25px; */
+    padding: 80px 20px 0px 20px;
+    height: 1000px;
+}
+
+li a.active {
+    background-color: brown;
+    color: white;
+}
+
+#myinfo {
+    float: right;
+}
+
+#dropcontent {
+    display: none;
+    position: absolute;
+    background-color: aliceblue;
+    width: 140px;
+
+}
+
+#myinfo:hover #dropcontent{
+    display: block;
+
+}
+#dropcontent a{
+    font-size: 20px;
+}
+
+/* 모바일에서 인라인으로 안주고 블럭으로줘서  가독성 좋게만들기 
+media width 400까지는 아래에 스타일을 적용한다 */
+@media (max-width : 400px) {
+
+    ul {
+        position: static;
+    }
+    li {
+        display: block;
+    }
+    #myinfo {
+        float: none;
+    }
+    
+}
+
+</style>
+
+
+
+<body>
+
+
+    <ul>
+        <li><a class ="active" href="#home">홈</a></li>
+        <li><a href="#news">소식</a></li>
+        <li><a href="#contents">컨텐츠</a></li>
+        <li><a href="#intro">소개</a></li>
+        <li><a href="#dummy">더미</a></li>
+        <li id="myinfo"><a href="divdummy" id="dropbtn">내정보</a>
+            <div id="dropcontent">
+                <a href="">정보수정</a>
+                <a href="">신청내역</a>
+                <a href="">탈퇴하기</a>
+            </div>
+        </li>
+    </ul>
+
+    <div id="content">
+       <div id="divhome">
+    <h1 id="home">홈</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+
+        <div id="divnews">
+    <h1 id="news">소식</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+
+    <div id="divcontents">
+    <h1 id="contents">컨텐츠</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+
+        <div id="divintro">
+    <h1 id="intro">소개</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+
+
+        <div id="divdummy">
+    <h1>더미</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <h1>더미</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <h1>더미</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <h1>더미</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <h1>더미</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+    </div>
+
+
+
+
+
+    
+</body>
+</html>
