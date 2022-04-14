@@ -1,0 +1,252 @@
+<meta charset="utf-8">
+<h1><a href="index.html">메인화면</a></h1>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- form 태그안에 있는 input들은 하나의 데이터로 묶인다
+type submit 을 하면 form 태그안에 데이터는 모두 전송된다
+required 를 추가해주면 빈 값을 허용하지 않는다 -->
+
+<form>
+    <!-- <input type="text" placeholder="이름" required>
+    <input type="text" placeholder="나이" required>
+    <input type="text" placeholder="성별">
+    <input type="text" placeholder="주소">
+    <br>
+    <input type="submit" value="회원가입">
+</form>
+<br><br><br><br><br>
+<div style="width: 650px;">
+    
+<form>
+
+    <fieldset>
+        <legend>신청자</legend>
+        <label for="">이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" autofocus required>
+        <br>
+        <label for="">학번&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" required>
+        <br>
+        <label for="">생년월일</label>
+        <input type="text" required>
+    </fieldset>
+    <br>
+    <br>
+
+    <fieldset>
+        <legend>수강과목</legend>
+            <select>
+                <option></option>
+                <option>데이터베이스</option>
+                <option>C언어</option>
+                <option>소프트웨어 플랫폼</option>
+                <option>JAVA</option>
+                <option>객체지향</option>
+                <option>알고리즘</option>
+            </select>
+    </fieldset>
+    <br>
+
+<fieldset>
+    <legend>희망과목 조사 (중복선택 가능)</legend>
+    <input type="checkbox" id="book1" >
+    <label for="book1">데이터베이스</label>
+    <input type="checkbox" id="book2" >
+    <label for="book2">c언어</label>
+    <input type="checkbox" id="book3" >
+    <label for="book3">소프트웨어 플랫폼</label>
+    <input type="checkbox" id="book4" >
+    <label for="book4">JAVA</label>
+    <input type="checkbox" id="book5" >
+    <label for="book5">객체지향</label>
+    <input type="checkbox" id="book6" >
+    <label for="book6">알고리즘</label>
+</fieldset>
+
+<br>
+
+<fieldset>
+    <legend>학생증</legend>
+    <lael for for=""></lael>
+    <input type="file">
+</fieldset>
+
+<br>
+
+<fieldset>
+    <legend>비고</legend>
+    <input type="submit" value="신청하기">
+    <input type="reset" value="다시작성">
+</fieldset>
+</form> -->
+
+
+
+<style>
+* {
+    background-image:url(./image/배경이미지2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:black;
+    font-weight: bold;
+
+}
+#table1 {
+    margin-top: 50;
+    margin-left: 50;
+    margin-bottom: 0;
+    font-size: 30px;
+}
+
+#table2 {
+    margin-top: 0;
+    margin-left: 50;
+    margin-bottom: 0;
+    font-size: 20px;
+    
+}
+
+#table3 {
+    margin-top: 0;
+    margin-left: 50;
+    margin-bottom: 0;
+    
+}
+
+#act{
+    font-size: 30px;
+    text-decoration: none;
+}
+
+#a:hover
+{
+    background-color: black;
+}
+
+</style>
+
+<div>
+
+<form>
+
+<fieldset id="table1">
+    <legend>년도/학기</legend>
+    <input type="text">
+    <label type="text" required autofocus></label>
+</fieldset>
+
+<fieldset id="table2">
+    <legend>신청자</legend>
+    <label for="">이름</label>
+    <input type="text" required>
+    
+    <label for="">생년월일</label>
+    <input type="text" required>
+    <label for="">학번</label>
+    <input type="text" required>
+    <br>
+    <label for="">학과</label>
+    <input type="text" required>
+    <label for="">대학원</label>
+    <input type="text" required>
+    <label for="">기수/임시기수</label>
+    <input type="text" required>
+    <br>
+</fieldset>
+
+<fieldset id="table3">
+    
+    <table style="text-align:center; table-layout: fixed; word-break: break-all; width:100%">
+        <tr>
+            
+            <td>선택</td>
+            <td>대학원</td>
+            <td>과정구분</td>
+            <td>학과</td>
+            <td>전공</td>
+            <td>과목코드/분반</td>
+            
+        </tr>
+
+        <tr>
+            <td>
+                <input type="checkbox" id="a" >
+                <label for="a"></label>
+            </td>
+            <td>보건과학대학원</td>
+            <td>석사</td>
+            <td>보건학과</td>
+            <td></td>
+            <td>G03387-1/121321</td>
+           
+        </tr>
+
+        <tr>
+            <td>
+                <input type="checkbox" id="b" >
+                <label for="b"></label>
+            </td>
+            <td>보건과학대학원</td>
+            <td>석사</td>
+            <td>보건학과</td>
+            <td></td>
+            <td>G033311-1/123123</td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="checkbox" id="c" >
+                <label for="c"></label>
+            </td>
+            <td>보건과학대학원</td>
+            <td>석사</td>
+            <td>보건학과</td>
+            <td></td>
+            <td>G12131541-1/123123</td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="checkbox" id="d" >
+                <label for="d"></label>
+            </td>
+            <td>보건과학대학원</td>
+            <td>석사</td>
+            <td>보건학과</td>
+            <td></td>
+            <td>G12132341-1/123123</td>
+            
+        </tr>
+
+        <tr>
+            <td>
+                <input type="checkbox" id="e" >
+                <label for="e"></label>
+            </td>
+            <td>보건과학대학원</td>
+            <td>석사</td>
+            <td>보건학과</td>
+            <td></td>
+            <td>G12138741-1/123123</td>
+
+
+            
+            
+        </tr>
+
+    </table>
+
+    
+    <input  id="act" type="submit" value="신청하기">
+    <a id="act" href="index.html">
+        뒤로가기</a>
+    
+
+</fieldset>    
+
+
+</form>
+
+</div>

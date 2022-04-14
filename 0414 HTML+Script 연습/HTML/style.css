@@ -1,0 +1,17 @@
+table th, td {
+    border : 1px 
+    solid  #ccc;
+    
+}
+
+th,td {
+    width:80px;
+    height: 80px;
+}
+
+thead{
+    background-color: #eeeeee;
+}
+
+
+

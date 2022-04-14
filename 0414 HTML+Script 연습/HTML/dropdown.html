@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+    .dropdown:hover .dropcontent {
+        display: block;
+
+    }
+
+    .dropdownbtn{
+        background-color: brown;
+        color: white;
+        padding: 8;
+        font-size: 30px;
+        border: none;
+
+    }
+
+    .dropcontent a {
+        display: block;
+        color: black;
+        padding: 12px 46px;
+        text-decoration: none;
+
+
+    }
+
+    .dropcontent a:hover {
+        background-color: aqua;
+        width: auto;
+
+    }
+    .dropcontent {
+        position: absolute;
+        display: none;
+    }
+   
+
+</style>
+
+
+
+
+
+
+
+    <h2>드랍다운메뉴</h2>
+    <p>여기는 드랍다운 영역</p>
+
+    <div class="dropdown">
+        <button class="dropdownbtn">드랍다운</button>
+        <div class="dropcontent">
+            <a href="">메뉴1</a>
+            <a href="">메뉴2</a>
+            <a href="">메뉴3</a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div>
+        <form>
+            <fieldset>
+            <label for="name">E-mail</label>
+            <input name="id" type="email"  id ="name" maxlength="30" value="" required>
+        
+            <label for="pw">비밀번호</label></td>
+            <input name="pw" type="password"  id ="name" maxlength="12" value="" required>
+
+            <button onclick="login">로그인</button>
+        
+        </fieldset>
+
+        </form>
+    </div>
+</body>
+</html>
+<script>
+function login() {
+    var id = document.querySelector("input[name='id']").value;
+    var pw = document.querySelector("input[name='pw']").value;
+    console.log(id);
+    console.log(pw);
+    alert("환영합니다!");
+  }
+</script>
