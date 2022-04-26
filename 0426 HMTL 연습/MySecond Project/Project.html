@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+
+
+    #Number_Game{
+    margin: 200px auto;
+    text-align: center;
+    width: 600px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border: 1px solid black;
+    background-color: aqua;
+    
+}
+
+</style>
+
+
+<body>
+    <div id="Number_Game">
+        <h2>숫자 맞추기 게임!</h2>
+        <h3>이 게임은 1부터 100까지의 숫자를 맞추는 게임입니다.</h3>
+        <br><br>
+        <form>
+            <h2>숫자 : 
+                <input type="text" id="user" size="10"> 
+                <input type="button" id="btn" value="확인" style="font-size: 15px;"
+                onclick="guess()">
+            <h2>
+
+            <p>추측횟수 :  
+                <input type="text" id="guesses" size="30">
+            </p>
+
+            <p>힌트 : 
+                <input type="text" id="result" size="20">
+            </p>
+
+            <p>
+                <button type="reset" id="resetbtn" value="다시!" style="font-size: 30px;">다시!</button>
+            </p>
+
+        </form>
+        <div id="area"></div>
+    </div>
+</body>
+
+
+</html>
+
+
+<script>
+    
+var ran;
+var count;
+
+function guess() {
+    var num1 = document.querySelector("#user").value;
+
+    if(num1 == ""){
+        alert("숫자를 입력하세요.");
+    }
+    else if (num1 == ran) {
+        var area = document.querySelector("#area");
+        area.innerHTML = "정답입니다";
+    }
+    else {
+        if (ran > num1) {
+            document.querySelector("#result").value = (num1 + "보다 큽니다.");
+        }
+        else {
+            document.querySelector("#result").value = (num1 + "보다 작습니다.");
+        }
+    }
+    document.querySelector("#guesses").value = ("시도한 횟수는" + (count++) + "번 입니다.");
+}
+
+function gameReset() {
+    ran = Math.floor(Math.random() * 100 + 1);
+    count = 1;
+    document.querySelectorAll("#area").innerHTML = "";
+    document.querySelectorAll("#result").value = "";
+    document.querySelectorAll("#guesses").value = "";
+    document.querySelectorAll("#user").value = "";
+}
+window.onload = function () {
+    var t =document.querySelector("#resetbtn");
+    t.addEventListener('click', function () {
+        gameReset();
+    });
+    gameReset();
+}
+
+</script>
