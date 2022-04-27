@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    #header {
+        background-color: bisque;
+        text-align: center;
+        padding: 30px;
+    }
+
+
+    #container{
+
+        height: 100vh;
+        background-color: lightgray;
+
+    }
+
+    #left {
+        width: 65%;
+        height: 90vh;
+        background-color: azure;
+        float: left;
+        padding: 3%;
+        margin: 2.5% 0% 0% 2.5%;
+
+    }
+
+    .left-content {
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+        flex-wrap: wrap;
+    }
+
+    .left-item {
+        /* flex: auto; */
+        flex-grow: 10%;
+        flex-shrink: 10%;
+    }
+
+    #right {
+        float: left;
+        height: 90vh;
+        width: 28%;
+        background-color: azure;
+        margin-left: 5%;
+        margin: 2.5% 0% 0% 2.5%;
+
+    }
+
+
+
+    #footer {
+        background-color: bisque;
+        text-align: center;
+        padding: 20px;
+
+    }
+
+img {
+    width: 100%;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* border-style: 1px solid; */
+    border-color:  #acaaaa;
+
+}
+</style>
+
+
+<body>
+
+
+    <div id="">
+        
+        <div id="header">
+            <h2>네이버</h2>
+
+        </div>
+
+        <!-- 컨테이너 -->
+        <div id="container">
+
+        
+        <!-- 왼쪽컨텐츠 -->
+        <div id="left">
+            <h2>왼쪽컨텐츠</h2>
+            
+            
+            <div class="left-content">
+                
+                <div class="left-item">
+                    <table border="1">
+                      <tr>
+                        <td><h1>JAVA Game</h1></td>
+                        <td><h1>Unity Hub</h1></td>
+                        <td><h1>C# Game</h1></td>
+                        <td><h1>HTML</h1></td>
+                    </tr>
+                    <tr>
+                        
+                        <td><a href="https://github.com/PolarisS2/S-W-GameProgramming"><img style="width: 120px;" src="./결과1.jpg"></a></td>
+                        <td><a href="https://github.com/PolarisS2/S-W-GameProgramming"><img style="width: 120px;" src="./결과2.jpg"></a></td>
+                        <td><a href="https://github.com/PolarisS2/High-Level-ProGramming"><img style="width: 120px;" src="./결과3.png"></a></td>
+                        <td><a href="https://github.com/PolarisS2/High-Level-ProGramming"><img style="width: 120px;" src="./연습1.png"></a></td>
+                    </tr>
+                    </table>
+                </div>
+            
+            </div>
+
+        </div>
+
+        <!-- 오른쪽컨텐츠 -->
+        <div id="right">
+            <h2>오른쪽컨텐츠</h2>
+            <div id="portfolio">
+                
+              <h2>오른쪽컨텐츠</h2>
+              
+              <h1 style="color: darkgreen">Here’s some stuff I did recently.</h1>
+              <h2 style="color: darkgreen">Collaborate, develop, correct errors, etc</h2>
+              <br><br>
+              <div class="link">
+                  <h1>『Click Picture』</h1>
+                  <a href="https://github.com/PolarisS2/git_test"><img src="./코딩1.jpg" width="200px" ></a>
+                  <a href="https://github.com/PolarisS2/S-W-Platform"><img src="./코딩2.jpg" width="200px" ></a>
+                  <a href="https://github.com/PolarisS2/HTML5"><img src="./코딩3.jpg" width="200px" ></a>
+              </div>
+              <br><br>
+              <h1><a href="https://github.com/" style="color: red; padding-right: 20px; ">My Github</a>Or
+              <a href="http://localhost/HTML/index.html" style="color: red; padding-left: 20px;">Others</a><h1>
+                  <br>
+          </div>
+          <a href="#contact" style="color: green; font-size: 30px;">Get in touch with me</a>
+      </div>
+
+        </div>
+
+        </div>
+    </div>
+    <!-- 푸터 -->
+    <div id="footer">
+        <h2>푸터</h2>
+    </div>
+
+
+
+    
+</body>
+</html>
