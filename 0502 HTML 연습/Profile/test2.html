@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>그리드</title>
+
+    <!-- --부트스트랩-- -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- --js-- -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- --js-- -->
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- --폰트 어썸-- -->
+    <script src="https://kit.fontawesome.com/8d9741eb42.js" crossorigin="anonymous"></script>
+    
+    
+</head>
+
+<style>
+/* -----글꼴----- */
+@font-face {
+    font-family: 'YdestreetB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/YdestreetB.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+  *{
+    font-family: 'YdestreetB';
+  }
+    .Allbackground{
+      background: rgb(146,221,221);
+background: linear-gradient(90deg, rgba(146,221,221,0.6615021008403361) 0%, rgba(89,152,244,0.7371323529411764) 55%, rgba(131,114,246,0.7091211484593838) 91%);
+        height: 100%;
+        width: 100%;
+    }
+    
+
+    .card{
+        display: inline-block;
+        text-align: center;
+        
+    }
+    .card-img-top{
+    height: 18rem;
+    
+    
+    }
+    .No1{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        
+    }
+
+    /* .profile {
+        display: flex;
+        justify-content: center;
+	      display: grid;
+        grid-template-columns: 200px 200px 200px;
+	      grid-template-rows: 200px 200px 200px;
+    } */
+
+
+
+    li{
+        list-style: none;
+    }
+
+    .p-3{
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      height: 20vh;
+      width: 50vh;
+    }
+    
+    .info{
+      /* text-align: center; */
+      /* display: flex; */
+        justify-content: center;
+	      display: grid;
+    }
+
+    .introduce{
+      display: flex;
+      text-align: left;
+      
+    }
+    table th{
+      border: 1px solid black;
+      width: auto;
+      font-size: x-large;
+    }
+    table td{
+      border: 1px solid black;
+      text-align: center;
+      width: 300px;
+      font-size: x-large;
+    }
+    .ul{
+      width: 100%;
+      color: #666;
+      text-align: center;
+      margin-top: 100px;
+    }
+    .li{
+      float: left;
+      width: 30%;
+      list-style: none;
+      border-left: 1px solid #F9B514;
+    }
+    li:first-child{
+      border-left: 0;
+    }
+
+    .count{
+      padding-bottom: 15%;
+    }
+    #Education{
+      text-align: center;
+    }
+    .profile{
+      text-align: center;
+    }
+/* .progress{
+  width: 50%;
+  
+  background-color: white;
+  margin-left: 20%; */
+
+  .progress {
+    display: flex;
+    width: 50%;
+    height: 3rem;
+    margin-left: 25%;
+    overflow: hidden;
+    font-size: .75rem;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+}
+    /* -------------프로그래스------------ */
+/* .wrap {
+	width: 55%;
+	margin:0 auto;
+	padding-top:50px;
+}
+
+.progress {
+	position:relative;
+	width:200px;
+	height:200px;
+	border-radius:50%;
+	background:#dedddd;
+	box-shadow:2px 2px 2px 2px #a3a3a3 inset;
+	-webkit-box-shadow:2px 2px 2px 2px #a3a3a3 inset;
+	-moz-box-shadow:2px 2px 2px 2px #a3a3a3 inset;
+	-ms-box-shadow:2px 2px 2px 2px #a3a3a3 inset;
+}
+.progress div {
+	position:absolute;
+	left:100px; 
+	top:0px;
+	display:none; 
+	width:2px;
+	height:100px;
+	background: red;
+	transform-origin: 0px 100px;
+	-webkit-transform-origin: 0px 100px;
+	-moz-transform-origin: 0px 100px;
+	-ms-transform-origin: 0px 100px;
+}
+
+.progress_value {
+	transform:lotate(0deg);
+	-webkit-transform:lotate(0deg); 
+	-moz-transform:lotate(0deg); 
+	-ms-transform:lotate(0deg);
+}
+
+#span {
+	position:absolute;
+	z-index:10;
+	left:25px;
+	top:25px;
+	width:150px;
+	height:150px;
+	line-height:150px; 
+	text-align:center;
+	background:#fcfcfc;
+	border-radius:50%;
+	box-shadow:2px 2px 2px 2px #a3a3a3;
+	-webkit-box-shadow:2px 2px 2px 2px #a3a3a3;
+	-moz-box-shadow:2px 2px 2px 2px #a3a3a3;
+	-ms-box-shadow:2px 2px 2px 2px #a3a3a3;
+	font-size:42px; 
+	font-weight:bold;
+	color:#666; 
+	text-shadow:2px 2px 2px #000;
+	-webkit-text-shadow:2px 2px 2px #000;
+	-moz-text-shadow:2px 2px 2px #000;
+	-ms-text-shadow:2px 2px 2px #000;
+} */
+
+/* -------------프로그래스------------ */
+
+/* -------------------------호버-------------------- */
+.project {
+  width: 100%;
+  height: 350px;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 0; }
+  .project.img-2 {
+    height: 600px; }
+    @media (max-width: 767.98px) {
+      .project.img-2 {
+        height: 285px; } }
+    .project.img-2 .text {
+      max-width: 45%;
+      z-index: 1; }
+      .project.img-2 .text h3 {
+        font-size: 22px; }
+        .project.img-2 .text h3 a {
+          color: #fff; }
+      .project.img-2 .text span {
+        color: rgba(255, 255, 255, 0.8);
+        text-transform: uppercase;
+        letter-spacing: 2px; }
+      @media (max-width: 767.98px) {
+        .project.img-2 .text {
+          max-width: 100%;
+          opacity: 1; }
+          .project.img-2 .text span {
+            color: rgba(255, 255, 255, 0.8); } }
+  .project .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: 0;
+    background: #3e64ff;
+    z-index: -1;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    @media (max-width: 767.98px) {
+      .project .overlay {
+        opacity: .2; } }
+  .project .text {
+    max-width: 80%;
+    z-index: 1;
+    opacity: 0;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .project .text h3 {
+      font-size: 20px; }
+      .project .text h3 a {
+        color: #fff; }
+    .project .text span {
+      color: rgba(255, 255, 255, 0.8);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 600; }
+    @media (max-width: 767.98px) {
+      .project .text {
+        opacity: 1; }
+        .project .text span {
+          color: rgba(255, 255, 255, 0.8); } }
+  .project:hover .overlay, .project:focus .overlay {
+    opacity: .9; }
+  .project:hover .text, .project:focus .text {
+    opacity: 1; }
+.project .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: 0;
+    background: #3e64ff;
+    z-index: -1;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    
+  .project .text {
+    max-width: 80%;
+    z-index: 1;
+    opacity: 0;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .project .text h3 {
+      font-size: 20px; }
+      .project .text h3 a {
+        color: #fff; }
+    .project .text span {
+      color: rgba(255, 255, 255, 0.8);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 600; }
+    @media (max-width: 767.98px) {
+      .project .text {
+        opacity: 1; }
+        .project .text span {
+          color: rgba(255, 255, 255, 0.8); } }
+  .project:hover .overlay, .project:focus .overlay {
+    opacity: .9; }
+  .project:hover .text, .project:focus .text {
+    opacity: 1; }
+  
+
+    #icon{
+        float: none;
+        width: auto;
+        text-align: center;
+    }
+
+    .item{
+      text-align: center;
+      width: 100%;
+    }
+    @media all and(max-width: 767.98px) {
+      .item{
+        
+      }
+}
+
+/* ---------------------------- */
+
+ 
+
+</style>
+<body>
+  
+
+
+  
+    <!-- -------------nav bar---------------------- -->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Active</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Separated link</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+
+          
+<!-- --------------------------------------------------- -->
+<div class="Allbackground">
+      <div class="info">
+        <div class="item" >
+          <h1 style="text-align: center;">Profile</h1>
+          <div class="introduce">
+          <img class="img" src="./img/카트.jpg">
+          <span>
+            <table>
+              <tr>
+                <th>이름  </th>
+                <td>차성빈</td>
+              </tr>
+              <tr>
+                <th>나이  </th>
+                <td>27세</td>
+              </tr>
+              <tr>
+                <th>성별  </th>
+                <td>남자</td>
+              </tr>
+              <tr>
+                <th>이메일  </th>
+                <td>cktjdqls1234@naver.com</td>
+              </tr>
+              <tr>
+                <th>휴대폰 번호  </th>
+                <td>010-xxxx-xxxx</td>
+              </tr>
+              <tr>
+                <th>거주지  </th>
+                <td>부산광역시 해운대구</td>
+              </tr>
+              <tr>
+                <th>생일  </th>
+                <td>2월12일</td>
+              </tr>
+              <tr>
+                <th>취미  </th>
+                <td>독서,농구,게임</td>
+              </tr>
+              <tr>
+                <th>MBTI  </th>
+                <td>ISFJ</td>
+              </tr>
+              </table>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- ---------------------------------------- -->
+
+      <div class="count">
+        <ul class="ul">
+          <li class="li">
+            <h2 class="number">5</h2>
+            <i>코딩한 기간(years)
+            </i>
+          </li>
+          <li class="li">
+            <h2 class="number">987</h2>
+            <i>Project</i>
+          </li>
+          <li class="li">
+            <h2 class="number">350</h2>
+            <i>Happy Customers</i>
+          </li>
+        </ul>
+      </div>
+      
+    
+
+        
+    <!-- --------------------card-------------------- -->
+    <div class="No1">
+        <fieldset>
+            <legend style="border: solid 1px; color: black;">사용가능한 언어
+                <br>
+          <div class="card" style="width: 18rem;">
+            <img src="./img/C sharp.jpg" class="card-img-top" alt="수정중입니다.">
+            <div class="card-body">
+              <p class="card-text">C#</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="./img/C++.png" class="card-img-top" alt="수정중입니다.">
+            <div class="card-body">
+              <p class="card-text">C++</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="./img/haskell.png" class="card-img-top" alt="수정중입니다.">
+            <div class="card-body">
+              <p class="card-text">Haskell</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="./img/HTML.png" class="card-img-top" alt="수정중입니다.">
+            <div class="card-body">
+              <p class="card-text">HTML</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./img/R.jpg" class="card-img-top" alt="수정중입니다.">
+          <div class="card-body">
+            <p class="card-text">R</p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+        <img src="./img/./JAVA.png" class="card-img-top" alt="수정중입니다.">
+        <div class="card-body">
+          <p class="card-text">JAVA</p>
+        </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./img/js.png" class="card-img-top" alt="수정중입니다.">
+          <div class="card-body">
+          <p class="card-text">JAVA Script</p>
+        </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="./img/linux.png" class="card-img-top" alt="수정중입니다.">
+            <div class="card-body">
+            <p class="card-text">Linux</p>
+        </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./img/php.png" class="card-img-top" alt="수정중입니다.">
+        <div class="card-body">
+          <p class="card-text">PHP</p>
+        </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./img/Python.png" class="card-img-top" alt="수정중입니다.">
+        <div class="card-body">
+          <p class="card-text">Python</p>
+        </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="./img/c.jpg" class="card-img-top" alt="수정중입니다.">
+        <div class="card-body">
+            <p class="card-text">C</p>
+        </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="./img/SQL.jpg" class="card-img-top" alt="수정중입니다.">
+        <div class="card-body">
+            <p class="card-text">SQL</p>
+        </div>
+        </div>
+    </div>
+    </legend>
+  </fieldset>
+    
+      <br><br>
+    <!-- --------------------------------------------------- -->
+    
+
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">Haskell</div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">R</div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Linux</div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">HTML</div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">JAVA</div>
+    </div>
+    <!-- <div class="wrap">
+      <div class="progress" data-percent="100">
+        <span id="span"></span>
+      </div>
+    </div> -->
+
+    
+
+<!-- ---------------------------------------- -->
+<br><br><br>
+<section class="ftco-section ftco-project">
+  <div class="container-fluid px-md-0">
+    <div class="row no-gutters justify-content-center pb-5">
+      <div class="col-md-12 heading-section text-center ftco-animate">
+        <h1 class="big big-2"></h1>
+        <h2 id="side-projects-section" class="mb-4">Side Projects</h2>
+        <p>꾸준히 사이드 프로젝트를 진행하며, 다양한 분야의 기술 스택을 경험해왔습니다.</p>
+      </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <div class="project img ftco-animate d-flex justify-content-center align-items-center"
+          style="background-image: url(./img/결과1.jpg);">
+          <div class="overlay"></div>
+          <div class="text text-center p-4">
+            <h3><a target="_blank" href="https://qpi.kr/"> JAVA - 간단한 Tetris 게임</a></h3>
+            <span>Game Develop</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project img ftco-animate d-flex justify-content-center align-items-center"
+          style="background-image: url(./img/결과3.png);">
+          <div class="overlay"></div>
+          <div class="text text-center p-4">
+            <h3><a href="#">C언어로 만든 지렁이 게임</a></h3>
+            <span>Game Develop</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="project img ftco-animate d-flex justify-content-center align-items-center"
+          style="background-image: url(./img/연습1.png);">
+          <div class="overlay"></div>
+          <div class="text text-center p-4">
+            <h3><a href="#">HTML Testing</a></h3>
+            <span>Web Design</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project img ftco-animate d-flex justify-content-center align-items-center"
+          style="background-image: url(./img/연습2.png);">
+          <div class="overlay"></div>
+          <div class="text text-center p-4">
+            <h3><a href="#">HTML Game</a></h3>
+            <span>Game Develop</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project img ftco-animate d-flex justify-content-center align-items-center"
+          style="background-image: url(./img/학교.png);">
+          <div class="overlay"></div>
+          <div class="text text-center p-4">
+            <h3><a href="#">협업 자료</a></h3>
+            <span>Web Design & Game Develop</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project img ftco-animate d-flex justify-content-center align-items-center"
+          style="background-image: url(./img/학원.jpg);">
+          <div class="overlay"></div>
+          <div class="text text-center p-4">
+            <h3><a href="#">HTML 연습</a></h3>
+            <span>Web Design & Protfolio</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br><br><br><br><br>
+<div id="icon" style="font-size: 30px;">
+  <h1>Find me on ...</h1>
+  <a href="https://twitter.com/?lang=ko"><i class="fa-brands fa-twitter-square"></i></a>
+  <a href="https://ko-kr.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+  <a href="https://www.instagram.com/"> <i class="fa-brands fa-instagram"></i></a>
+  <a href="https://github.com/"><i class="fa-brands fa-github"></i></a>
+  <a href="https://www.google.com/"><i class="fa-brands fa-google-plus"></i></a>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+</html>
+
+<script>
+  // --------------------------------숫자카운트-------------------
+  $(function() {
+  var count0 = count1 = count2 = 0;
+
+  timeCounter();
+
+  function timeCounter() {
+
+    id0 = setInterval(count0Fn, 100.738853);
+
+    function count0Fn() {
+      count0++;
+      if (count0 > 5) {
+        clearInterval(id0);
+      } else {
+        $(".number").eq(0).text(count0);
+      }
+
+    }
+
+    id1 = setInterval(count1Fn, 3.13171226);
+
+    function count1Fn() {
+      count1++;
+      if (count1 > 100) {
+        clearInterval(id1);
+      } else {
+        $(".number").eq(1).text(count1);
+      }
+    }
+
+    id2 = setInterval(count2Fn, 3.57142857);
+
+    function count2Fn() {
+      count2++;
+      if (count2 > 50) {
+        clearInterval(id2);
+      } else {
+        $(".number").eq(2).text(count2);
+      }
+    }
+  }
+});
+// --------------------------------숫자카운트-------------------
+
+
+
+// -----------------------------------원형 프로그레스--------------------
+// (function(){
+// 	var doms = '';
+// 	var $m = $('.progress');
+// 	var $data = $m.find('span');
+// 	var data = $m.data('percent');
+// 	var com = Math.round(data / 100 * 360);
+// 	var dur = 2000;
+
+// 	var getVendorPrefix = function() {
+// 		var body = document.body || document.documentElement,
+// 			style = body.style,
+// 			transition = "Transition",
+// 			vendor = ["Moz", "Webkit", "ms"],
+// 			lastGage,
+// 			i = 0;
+// 		while (i < vendor.length) {
+// 			if (typeof style[vendor[i] + transition] === "string") {
+// 				return vendor[i];
+// 			}
+// 			i++;
+// 		}
+// 		return false;
+// 	};
+// 	var prefix = getVendorPrefix();
+// 	var transform = prefix + 'Transform';
+
+// 	for(var i=0; i <= com; i++){
+// 	 doms = '<div class="gage-bar"></div>';
+// 	 $m.append(doms);
+// 	 $('.gage-bar:last').css(transform, 'rotate(' + i + 'deg)');
+// 	}
+
+// 	//$m.append(doms);
+
+// 	$m.find('div').each(function(index, item){
+// 	  $(item).stop().delay(index * 5).fadeIn(50);
+// 	});
+
+// 	for(var j=0; j <= data; j++){
+// 		(function(index){
+// 		   var time = (360/100*index)*5;
+// 			  setTimeout(function(){
+// 				$data.text( index + '%');
+// 			  }, time);
+// 		})(j);
+// 	}
+// })();
+// -----------------------------------원형 프로그레스--------------------
+
+</script>
