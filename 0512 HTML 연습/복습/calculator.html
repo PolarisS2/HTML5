@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input class="number" type="number" value="0">
+    <button class="add" onclick="add()">+</button>
+    <button class="result" onclick="result()">=</button>
+</body>
+</html>
+
+<script>
+    //입력한 값
+    var inputNumber = document.querySelector('.number');
+    //결과값
+    var resultNumber = parseInt(inputNumber.value);
+
+
+    function add() {
+    resultNumber = resultNumber + parseInt(inputNumber.value);
+}
+
+function result() {
+    console.log(resultNumber);
+    
+
+}
+
+
+// Test
+    
+//     //입력값
+//     var inputNumber = document.querySelector('.number');
+//     //결과값
+//     var resultNumber = parseInt(inputNumber.value);
+//     //저장값
+    
+//     function first(){
+
+//     }
+
+//     function CE() {
+//         inputNumber = 0;
+//         resultNumber = 0;
+//     }
+//     function C() {
+//         inputNumber = 0;
+//         resultNumber = 0;
+
+//     }
+//     function Delete() {
+
+//     }
+//     // function 분수() {
+        
+//     // }
+//     // function 제곱() {
+//     //     resultNumber = resultNumber - parseInt(inputNumber.value);        
+//     // }
+//     // function 루트() {
+        
+//     // }
+
+//     //나눗셈
+//     function division() {
+//         resultNumber = resultNumber / parseInt(inputNumber.value);
+//     }
+
+//     //곱셈
+//     function multiply() {
+//         resultNumber = resultNumber * parseInt(inputNumber.value);
+//     }
+//     //뺄셈
+//     function minuse() {
+        
+//         resultNumber = resultNumber - parseInt(inputNumber.value);
+
+//     }
+//     //덧셈
+//     function add() {
+//         resultNumber = resultNumber + parseInt(inputNumber.value);
+        
+//     }
+//     //결과
+//     function result() {
+//         console.log(resultNumber);
+//     }
+</script>
