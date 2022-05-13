@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+</head>
+<style>
+.container{
+    
+    float: left;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 35%;
+}
+
+#btn{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    
+}
+
+
+.table{
+    width: 300px;
+    height: 300px;
+}
+ul{
+    list-style: none;
+}
+</style>
+<body>
+<div class="container">
+    <div style="background-color: gray;">
+<table class="table">
+<!-- --------숫자-------- -->
+<input type="text" id="input" readonly style="width: 95%; border-radius: 10px; height: 40px;" >
+<br>
+<input type="text" id="output" readonly style="width: 95%; border-radius: 10px; height: 40px;">
+<!-- --------버튼-------- -->
+
+
+    <tr>
+        <td><button id="btn" onclick="per()" style="background-color: orange;">%</button></td>
+        <td><button id="btn" onclick="CE()" style="background-color: red;">CE</button></td>
+        <td><button id="btn" onclick="C()" style="background-color: red;">C</button></td>
+        <td><button id="btn" onclick="Delete()">지우기</button></td>
+    </tr>
+
+    <tr>
+        <td><button id="btn" onclick="fraction()" style="background-color: orange;">1/x</button></td>
+        <td><button id="btn" onclick="pow()" style="background-color: orange;">제곱</button></td>
+        <td><button id="btn" onclick="sqrt()" style="background-color: orange;">루트</button></td>
+        <td><button id="btn" onclick="sign('/')" style="background-color: orange;">/</button></td>
+    </tr>
+
+    <tr>
+        <td><button id="btn" onclick="send(7)">7</button></td>
+        <td><button id="btn" onclick="send(8)">8</button></td>
+        <td><button id="btn" onclick="send(9)">9</button></td>
+        <td><button id="btn" onclick="sign('*')" style="background-color: orange;">X</button></td>
+    </tr>
+
+    <tr>
+        <td><button id="btn" onclick="send(4)">4</button></td>
+        <td><button id="btn" onclick="send(5)">5</button></td>
+        <td><button id="btn" onclick="send(6)">6</button></td>
+        <td><button id="btn" onclick="sign('-')" style="background-color: orange;">-</button></td>
+    </tr>
+
+    <tr>
+        <td><button id="btn" onclick="send(1)">1</button></td>
+        <td><button id="btn" onclick="send(2)">2</button></td>
+        <td><button id="btn" onclick="send(3)">3</button></td>
+        <td><button id="btn" onclick="sign('+')" style="background-color: orange;">+</button></td>
+    </tr>
+
+    <tr>
+        <td><button id="btn" onclick="swap()">+/-</button></td>
+        <td><button id="btn" onclick="send(0)">0</button></td>
+        <td><button id="btn" onclick="sign('.')">.</button></td>
+        <td><button id="btn" onclick="Showresult()" style="background-color: red;">=</button></td>
+    </tr>
+</table>
+</div>
+
+
+<ul class="history">
+    
+</ul>
+
+
+
+
+
+
+</div>
+</body>
+</html>
+<script>
+    var result;
+    ///////////////////////////버튼 작용////////////////////////////
+    function send(data) {
+      output.value = output.value + data;
+    }
+    function sign(data){
+      input.value = input.value+output.value + data;
+      output.value="";
+    }
+
+    ///////////////////////연산 버튼 작용///////////////////////////
+    
+
+    function CE() {
+        input.value="";
+        output.value="";
+    }
+    function C() {
+        input.value="";
+        output.value="";
+    }
+
+    //substring
+    function Delete() {
+        output.value = output.value.substring(0, output.value.length-1);
+    }
+    //분수
+    function fraction() {
+      output.value="1/"+output.value;
+      output.value=eval(output.value);
+    }
+    //제곱
+    function pow() {
+        result = Math.pow(output.value,2);
+        output.value=result;
+        
+      
+    }
+    //제곱
+    function sqrt() {
+        result = Math.sqrt(output.value);
+        output.value=result;
+    }
+
+    function per(){
+        input.value=output.value / 100;
+        output.value=input.value;
+        input.value="";
+    }
+    function swap(){
+        output.value = -output.value;
+    }
+    //결과
+    function Showresult() {
+        input.value=input.value+output.value;
+        result = eval(input.value);
+        input.value="";
+        output.value=result;
+        saveresult();
+        
+        
+
+    }
+    function saveresult(){
+        var item = document.createElement('li');
+        item.innerText= "결과값은 : "+ output.value;
+        
+        document.querySelector('.history').appendChild(item);
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // function first(){
+
+    // }
+
+    // function CE() {
+    //     inputNumber = 0;
+    //     resultNumber = 0;
+    // }
+    // function C() {
+    //     inputNumber = 0;
+    //     resultNumber = 0;
+
+    // }
+    // function Delete() {
+
+    // }
+    // // function 분수() {
+        
+    // // }
+    // function 제곱() {
+    //     console.log(3**2);
+    //     resultNumber = parseInt(inputNumber.value);
+    //     console.log(resultNumber);
+    //     resultNumber = parseInt(inputNumber.value) * parseInt(inputNumber.value);
+    // }
+    // // function 루트() {
+        
+    // // }
+
+    // //나눗셈
+    // function division() {
+    //     resultNumber = resultNumber / parseInt(inputNumber.value);
+    // }
+
+    // //곱셈
+    // function multiply() {
+    //     resultNumber = resultNumber * parseInt(inputNumber.value);
+    // }
+    // //뺄셈
+    // function minuse() {
+    //     resultNumber = resultNumber - parseInt(inputNumber.value);
+
+    // }
+    // //덧셈
+    // function add() {
+    //     resultNumber = resultNumber + parseInt(inputNumber.value);
+        
+    // }
+    // //결과
+    // function result() {
+    //     console.log(resultNumber);
+        
+    // }
+    
+
+    
+</script>

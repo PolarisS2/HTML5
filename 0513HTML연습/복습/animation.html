@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 복습</title>
+</head>
+<style>
+    .animation{
+        animation: animove;
+        background-color: blueviolet;
+        animation-duration: 1s;
+        /* width를 제거해서 전체 단락을 최종 차지 */
+    }
+    @keyframes animove{
+        /* 어디에서 */
+        from {
+            margin-left: 100%;
+            width: 50px;
+        }
+        /* 어디로 갈것이다 */
+        to{
+            margin-left: 0%;
+            width: 500px;
+        }
+    }
+
+
+    .animation2{
+        width: 50px;
+        height: 50px;
+        animation: move2;
+        animation-duration: 5s;
+        background-color: brown;
+        position: relative;
+        /* 반복명령 */
+        animation-iteration-count: 2;
+    }
+    @keyframes move2{
+        /* from to 말고 퍼센트로 지정가능 */
+        0%{
+            left: 0px; top: 0px;
+        }
+        25%{
+            left: 200px; top: 0px;
+        }
+        50%{
+            left:200px; top: 200px;
+        }
+        75%{
+            left: 0px; top: 200px;
+        }
+        100%{
+            left: 0px; top: 0px;
+        }
+    }
+</style>
+
+<body>
+    
+    <div class="animation">
+        애니메이션
+    </div>
+    <div class="animation2">
+        애니메이션2
+    </div>
+</body>
+</html>
