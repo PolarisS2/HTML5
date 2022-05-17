@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js복습</title>
+</head>
+<body>
+    <p id="innerText">이너텍스트</p>
+    <input id="inputValue" type="text" value="밸류">
+    <button onclick="secret()">아이디체크</button>
+    <div id="styleDisplay">디스플레이스 css</div>
+    <img id="setImg" src="" alt="">
+
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+
+    <ul id="for">
+
+
+    </ul>
+</body>
+</html>
+
+<script>
+//웹 html을 조작하는 대표적인 언어이다.
+
+//html안에 텍스트를 가져오는 것
+// console.log(document.querySelector('#innerText'));
+// console.log(document.querySelector('#innerText').innerText);
+
+//html안에 배류값을 가져옴
+// console.log(document.querySelector('#inputValue'));
+// console.log(document.querySelector('#inputValue').value);
+// console.log(document.querySelector('#inputValue').type);
+
+//css를 조작
+// console.log(document.querySelector('#styleDisplay').style);
+// console.log(document.querySelector('#styleDisplay').style.display);
+// document.querySelector('#styleDisplay').style.fontSize ='100px';
+// console.log(document.querySelector('#styleDisplay').style.display);
+
+//html태그의 속성을 조작
+// document.querySelector('#setImg').setAttribute('원래경로','다른경로')
+
+//자체적인 프로그래밍을 할 수 있고,
+// 변수/자료형.제어문 반복문 등등..
+var test = 'qwer';
+var myArray =['abc','def','hij','kmn'];
+var itemArry = console.log(document.querySelectorAll('.item'));
+
+var oldInputValue = document.querySelector('#inputValue').value;
+
+for(var i=0; i<10; i++){
+    var item = document.createElement('li');
+    item.innerText=i;
+    document.querySelector('#for').appendChild(item);
+}
+
+
+
+//클라이언트 단에서 웹 페이지가 동작하는 것을 담당한다
+function secret() {
+    var inputValue = document.querySelector('#inputValue').value;
+    console.log("처음값");
+    console.log(oldInputValue);
+    console.log("새로운 값");
+    console.log(inputValue);
+    document.querySelector('#inputValue').type='password';
+    if(inputValue == '밸류'){
+    alert('밸류라는 아이디는 사용할수 없습니다.');
+    }else{
+    alert('정상적인 아이디 입니다.');
+    }
+}
+</script>

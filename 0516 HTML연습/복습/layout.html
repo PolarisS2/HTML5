@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 연습</title>
+</head>
+<style>
+    .header{
+        display: flex;
+    }
+    .image{
+        flex-grow: 1;
+        background-color: yellow;
+    }
+    .search{
+        flex-grow: 3;
+        background-color: orange;
+    }
+    .nav{
+        background-color: green;
+    }
+    /* 컨테이너에 플렉스주기 or 플롯+위드 주기 */
+    .container{
+        display: flex;
+    }
+    .left{
+        /* float: left;
+        width: 70%; */
+        background-color: blue;
+        flex-grow: 7;
+    }
+    .right{
+        /* float: left;
+        width: 29%; */
+        background-color: cadetblue;
+        margin-left: 1%;
+        flex-grow: 3;
+    }
+</style>
+<body>
+    <!-- ----------header---------- -->
+    <div class="header">
+        <div class="image">
+            이미지 영역
+            <img src="" alt="" width="50px">
+        </div>
+        <div class="search">
+            <input type="text">
+        </div>
+    </div>
+<!-- ----------nav---------- -->
+    <div class="nav">
+        네비게이션 영역
+    </div>
+    
+    <div class="container">
+<!-- ----------left---------- -->
+        <div class="left">
+            <div>이미지영역</div>
+            <div>뉴스영역</div>
+            <div>뉴스그리드영역</div>
+        </div>
+<!-- ----------right---------- -->
+        <div class="right">
+            오른쪽영역
+            <br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+    </div>
+</body>
+</html>
