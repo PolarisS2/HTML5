@@ -36,12 +36,17 @@
     <ul class="history">
 
     </ul>
+
     
+    
+    <!-- <div>
+        <b><?php echo $_SESSION['id'] . "님이 입장하셨습니다."?></b>
+    </div> -->
 </body>
 </html>
 <script>
     
-    
+    var score = 0;
     var count=0;    
     var start = '개나리';
     
@@ -52,17 +57,25 @@
         //시작단어
         console.log(start);
     }
-    // function turn(){
-    //     if(window.event.keyCode==13){
-    //     if(count==0){
-    //         document.querySelector('#turn').innerHTML = "내 차례";
-    //         count= count+1;
-    //     }else{
-    //         document.querySelector('#send').innerHTML = "상대방 차례";
-    //         count=0;
-    //     }
-    // }
 
+    // function postScore() {
+    //     var http = new XMLHttpRequest();
+    //         http.onreadystatechange = function () {
+    //             if(this.status == 200 && this.readyState == this.DONE) {                            
+    //                 if(JSON.parse(http.response)['result'] != 'n'){
+    //                     // 좋아요 갯수 최신화
+    //                     document.querySelector('#send').innerText 
+    //                     = JSON.parse(http.response)['result'];
+    //                 } else {
+    //                     alert('실패');
+    //                 }
+    //             }            
+    //         }            
+            
+    //         var url = "http://localhost/클론코딩/DBGame/api/update_score.php?no=" + score;
+            
+    //         http.open('GET', url);
+    //         http.send();
     // }
 
     function show_name(e){
@@ -73,21 +86,28 @@
         
         if(count==0){
             document.querySelector('#turn').innerHTML = "내 차례";
-            count = count+1;    
-            console.log('if==0');
-            console.log(count);
+            count = count+1;   
+            score = score + 100
+            postScore(score);
+            // console.log('if==0');
+            // console.log(count);
+            // console.log(score);
+
         }
         else{
             document.querySelector('#turn').innerHTML = "상대방 차례";
             count = count-1;
-            console.log('if==1');
-            console.log(count);
+            score = score + 100
+            postScore(score);
+            // console.log('if==1');
+            // console.log(count);
+            // console.log(score);
 
             
         }
         
         }
-
+        
     
     
 //--------------------------------------------------------------

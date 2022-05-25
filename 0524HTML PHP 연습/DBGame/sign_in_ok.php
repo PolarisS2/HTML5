@@ -1,7 +1,7 @@
 <?php 
 include('common.php');
 
-
+// $no = $_POST['no'];
 $id = $_POST['id'];
 $pw = $_POST['pw'];
 

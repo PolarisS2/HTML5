@@ -9,7 +9,7 @@ if($_SESSION){
     ";
     echo "
     <script>
-        location.href='./game.php';
+        location.href='game.php';
     </script>
     ";
 }else{
@@ -25,7 +25,7 @@ $sql = " select
             pw
             ";
 
-        // $result = $conn ->query($sql);
+$result = $conn ->query($sql);
 ?>
 
 <!DOCTYPE html>

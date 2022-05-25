@@ -2,7 +2,7 @@
 
 include ("common.php");
 include ("./view/game.html");
-$no = $_GET['no'];
+$no = $_POST['no'];
 
 $sql = "select no,id,pw, score
         from endtalk
@@ -12,12 +12,8 @@ $sql = "select no,id,pw, score
 $result = $conn -> query($sql);
 // print_r($result);
 $data = mysqli_fetch_assoc($result);
-
+$score = $data['score'];
+$_SESSION['score'] = $score;
 ?>
 
 
-<div style="text-align:center;">
-        <b1>내 점수 : 
-            <?php echo $data['score'];?>
-        </b1>
-</div>
