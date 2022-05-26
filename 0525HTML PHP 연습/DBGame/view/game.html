@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #header {
+    position: sticky;
+    top: 0;
+    padding: 30px;
+    opacity: 0.8;
+    z-index: 1;
+    text-align: center;
+    background-color: gray;
+    }
+
+    #container {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 10px;
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-rows: repeat(3, minmax(200px, 1fr));
+    gap: 20px;
+    }
+
+    .outer {
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .content {
+        display: none;
+        width: 100%;
+        color: white;
+        font-size: 13px;
+    }
+    .outer b{
+        opacity: 0;
+    }
+    #first{
+        background-image: url(./view/img/대기방1.png);
+        height: 70px;
+        width: 245px;
+    }
+    #second{
+        background-image: url(./view/img/대기방2.png);
+        height: 70px;
+        width: 245px;
+
+    }
+    #third{
+        background-image: url(./view/img/대기방3.png);
+        height: 70px;
+        width: 245px;
+
+    }
+    #four{
+        background-image: url(./view/img/대기방4.png);
+        height: 70px;
+        width: 245px;
+    }
+    #five{
+        background-image: url(./view/img/대기방5.png);
+        height: 70px;
+        width: 245px;
+    }
+    #six{
+        background-image: url(./view/img/대기방6.png);
+        height: 70px;
+        width: 245px;
+    }
+
+
+
+</style>
+<body>
+        <!-- header -->
+        <div id="header">
+
+            <div id="sub">
+                <button onclick="newstart()" style="width: 150px; height: 100px; background-color: yellowgreen;">방만들기</button>
+                <button onclick="start()" style="width: 150px; height: 100px; background-color: yellowgreen;">바로시작</button>
+                <button onclick="logout()" style="width: 150px; height: 100px; background-color: cyan; float: right;">로그아웃</button>
+            </div>
+    
+                
+    
+                
+        </div>
+
+
+
+    <div id="container">
+
+        <div id="first" class="outer">
+            
+            <div class="inner">
+                <a href="http://localhost/%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9/DBGame/view/game_ok.html"><b>입장입장입장입장입장입장입장입장입장입장입장입장입장입장입장</b></a>
+                <div class="content">
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+
+        <div id="second" class="outer">
+            <div class="inner">
+                <a href="http://localhost/%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9/DBGame/game_ok.html"><b>입장입장입장입장입장입장입장입장입장입장입장입장입장입장입장</b></a>
+                <div class="content">
+                
+                </div>
+            </div>
+        </div>
+
+        <div id="third" class="outer">
+            <div class="inner">
+                <a href="http://localhost/%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9/DBGame/view/game_ok.html"><b>입장입장입장입장입장입장입장입장입장입장입장입장입장입장입장</b></a>
+                <div class="content">
+                
+                </div>
+            </div>
+        </div>
+
+        <div id="four" class="outer">
+            <div class="inner">
+                <a href="http://localhost/%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9/DBGame/view/game_ok.html"><b>입장입장입장입장입장입장입장입장입장입장입장입장입장입장입장</b></a>
+                <div class="content">
+                
+                </div>
+            </div>
+        </div>
+
+        <div id="five" class="outer">
+            <div class="inner">
+                <a href="http://localhost/%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9/DBGame/view/game_ok.html"><b>입장입장입장입장입장입장입장입장입장입장입장입장입장입장입장</b></a>
+                <div class="content">
+                
+                </div>
+            </div>
+        </div>
+
+        <div id="six" class="outer">
+            <div class="inner">
+                <a href="http://localhost/%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9/DBGame/view/game_ok.html"><b>입장입장입장입장입장입장입장입장입장입장입장입장입장입장입장</b></a>
+                <div class="content">
+                
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    
+</body>
+</html>
+
+
+
+<script>
+    function logout(){
+        location.href="logout.php";
+    }
+
+    function start(){
+        location.href= "game_ok.php";
+    }
+
+    function newstart(){
+        location.href= "game_ok.php";
+
+    }
+
+</script>
+
+

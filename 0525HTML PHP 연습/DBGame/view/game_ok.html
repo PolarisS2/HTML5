@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>끝말잇기</title>
+</head>
+
+<style>
+    li{
+        list-style: decimal;
+    }
+    .turn{
+        text-align: center;
+    }
+    .main{
+        text-align: center;
+        padding-top: 50px;
+    }
+    /* .Title{
+        text-align: center;
+        padding-top: 50px;
+    }
+    .startbtn{
+        background-color: aqua;
+        margin-bottom: 100px;
+    } */
+</style>
+<body>
+
+<div class="main">
+    <h1 class="Title">끝말잇기</h1>
+
+    <button class="startbtn" onclick="GameStart()"><h1>게임시작</h1></button>
+    <h3 id="start"></h3>
+    <!-- ------------------입력-------------------------------------- -->
+    <input id="send" type="text" maxlength="3"  onkeyup="enterkey(); "  onkeypress="show_name(event)">
+    <button id="sendbtn" onclick="button(); focusMethod(); textreset(); turn()">입력 </button>
+    <div>
+        <h1 id="turn"></h1>
+    </div>
+    <ul class="history">
+
+    </ul>
+
+
+</div>
+    
+    <!-- <div>
+        <b><?php echo $_SESSION['id'] . "님이 입장하셨습니다."?></b>
+    </div> -->
+</body>
+</html>
+<script>
+    
+    var score = 0;
+    var count=0;    
+    var start = '개나리';
+    
+    function GameStart(){
+        
+        document.querySelector('#start').innerHTML ="시작단어  :  " + start + "   입니다.";
+
+        //시작단어
+        console.log(start);
+    }
+
+    // function postScore() {
+    //     var http = new XMLHttpRequest();
+    //         http.onreadystatechange = function () {
+    //             if(this.status == 200 && this.readyState == this.DONE) {                            
+    //                 if(JSON.parse(http.response)['result'] != 'n'){
+    //                     // 좋아요 갯수 최신화
+    //                     document.querySelector('#send').innerText 
+    //                     = JSON.parse(http.response)['result'];
+    //                 } else {
+    //                     alert('실패');
+    //                 }
+    //             }            
+    //         }            
+            
+    //         var url = "http://localhost/클론코딩/DBGame/api/update_score.php?no=" + score;
+            
+    //         http.open('GET', url);
+    //         http.send();
+    // }
+
+    function show_name(e){
+        
+        // var userword= document.querySelector('#send');
+        // var txt = document.querySelector('#turn').value;
+        // if(e.keyCode==13){
+        
+        if(count==0){
+            document.querySelector('#turn').innerHTML = "내 차례";
+            count = count+1;   
+            score = score + 100
+            postScore(score);
+            // console.log('if==0');
+            // console.log(count);
+            // console.log(score);
+
+        }
+        else{
+            document.querySelector('#turn').innerHTML = "상대방 차례";
+            count = count-1;
+            score = score + 100
+            postScore(score);
+            // console.log('if==1');
+            // console.log(count);
+            // console.log(score);
+
+            
+        }
+        
+        }
+        
+    
+    
+//--------------------------------------------------------------
+    function button() {
+    
+    // var word = document.createElement('li');
+    // word.innerText =  document.querySelector('#send').value;
+    // document.querySelector('.history').appendChild(word);
+
+    //입력단어
+    // console.log(word.innerText);
+    chk();
+    
+
+}
+//---------------------------------------------------------
+    function chk() {
+        //answer 유저답안
+        //start 컴퓨터 답안
+        //console.log(answer[1]);
+        //console.log(start[0]);
+        
+        var answer = document.querySelector('#send').value;
+        if(start[2] == answer[0]){
+            var word = document.createElement('li');
+            word.innerText =  document.querySelector('#send').value;
+            document.querySelector('.history').appendChild(word);
+            
+
+            start = answer;
+            document.querySelector('#start').innerHTML=start;
+
+
+
+
+    }else{
+        alert('잘못입력했습니다.');
+    }
+}
+focusMethod = function getFocus() {
+  document.querySelector('#send').focus();
+}
+    
+function textreset(){
+    document.querySelector('#send').value="";
+}
+    
+function enterkey() {
+    if (window.event.keyCode == 13){
+        //엔터 눌렀을때
+        dostart();
+        
+    }
+}
+function dostart(){
+    button(); 
+    focusMethod(); 
+    textreset();
+}
+
+
+
+
+
+</script>
