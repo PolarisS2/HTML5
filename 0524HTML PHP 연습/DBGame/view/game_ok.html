@@ -14,30 +14,38 @@
     .turn{
         text-align: center;
     }
+    .main{
+        text-align: center;
+        padding-top: 50px;
+    }
+    /* .Title{
+        text-align: center;
+        padding-top: 50px;
+    }
+    .startbtn{
+        background-color: aqua;
+        margin-bottom: 100px;
+    } */
 </style>
 <body>
-    <h1>끝말잇기</h1>
+
+<div class="main">
+    <h1 class="Title">끝말잇기</h1>
 
     <button class="startbtn" onclick="GameStart()"><h1>게임시작</h1></button>
     <h3 id="start"></h3>
-
-
-
     <!-- ------------------입력-------------------------------------- -->
     <input id="send" type="text" maxlength="3"  onkeyup="enterkey(); "  onkeypress="show_name(event)">
     <button id="sendbtn" onclick="button(); focusMethod(); textreset(); turn()">입력 </button>
     <div>
         <h1 id="turn"></h1>
-        
     </div>
-
-
-
     <ul class="history">
 
     </ul>
 
-    
+
+</div>
     
     <!-- <div>
         <b><?php echo $_SESSION['id'] . "님이 입장하셨습니다."?></b>

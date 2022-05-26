@@ -9,7 +9,7 @@ if($_SESSION){
     ";
     echo "
     <script>
-        location.href='game.php';
+        location.href='game_ok.php';
     </script>
     ";
 }else{

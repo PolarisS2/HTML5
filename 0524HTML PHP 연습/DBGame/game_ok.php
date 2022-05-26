@@ -20,9 +20,9 @@ include('score.php');
 
 </div>
 
-<b><?php echo $_SESSION['id'] . "님이 입장하셨습니다."?></b>
-
-<div style="text-align:center;">
+<b style="float: right;"><?php echo $_SESSION['id'] . "님이 입장하셨습니다."?></b>
+<br><br>
+<div style="text-align:center; float:right;">
 내점수 : <b1 id="point"> </b1>
 </div>
 <!-- 내 점수 : <?php echo $data['score'];?> -->
