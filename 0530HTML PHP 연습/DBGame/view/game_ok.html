@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>끝말잇기</title>
+</head>
+
+<style>
+    
+    li{
+        /* list-style: decimal; */
+        animation: flicker 1.5s infinite alternate;
+        color: #fff;
+        text-align: center;
+        list-style: none;
+        font-size: x-large;
+        
+    }
+    .turn{
+        text-align: center;
+    }
+    .main{
+        
+        padding-top: 50px;
+    }
+    
+/* ----------------네온---------------------- */
+.neonText {
+  animation: flicker 1.5s infinite alternate;
+  color: #fff;
+  text-align: center;
+  
+}
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      0 0 4px yellow,
+      0 0 11px yellow,
+      0 0 19px yellow,
+      0 0 40px black,
+      0 0 80px black,
+      0 0 90px black,
+      0 0 100px black,
+      0 0 150px black;
+  
+  }
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
+}
+/* --------------------배경---------------------- */
+.back {
+    background-color: #0a6800;
+    background-image: linear-gradient(45deg, #2ba11f 25%, transparent 25%, transparent 75%, #2ba11f 75%, #2ba11f), linear-gradient(45deg, #2ba11f 25%, transparent 25%, transparent 75%, #2ba11f 75%, #2ba11f);
+    background-position: 0 0, 25px 25px;
+    background-size: 50px 50px;
+    /* opacity: 50%; */
+    height: 100vh;
+    
+    /* z-index: -1; */
+}
+/* ------------------------------------------------------ */
+.board{
+    background-image: url("view/img/칠판.png");
+    height: 100vh;
+    width: 100vh;
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: center;
+    margin-left: 25%;
+    
+}
+#send{
+    margin-top: 30%;
+    margin-left: 60%;
+    /* display: none; */
+
+}
+#sendbtn{
+    /* display: none; */
+}
+/* .startbtn:hover #send{
+    display: block;
+} */
+
+
+</style>
+<body>
+
+    
+
+
+<div class="back">
+    <!-- ---------------------차례표시------------------------ -->
+    <br>
+    <div>
+        <h1 id="turn" class="neonText"></h1>
+        <button class="startbtn" onclick="GameStart()"><h1>게임시작</h1></button>
+    </div>
+    
+            <div  class="board">
+                <br><br><br>
+                
+ 
+            <!-- <div class="main"> -->
+                <!-- <h1 class="Title">끝말잇기</h1> -->
+
+                
+                <h3 id="start" class="neonText"></h3>
+                <!-- ------------------입력-------------------------------------- -->
+                <input id="send"   type="text" maxlength="3"  onkeyup="enterkey(); "  onkeypress="show_name(event)">
+                <button id="sendbtn" onclick="button(); focusMethod(); textreset(); turn()">입력 </button>
+
+        
+            
+
+
+
+
+            <!-- ---------------------입력된 단어-------------------------- -->
+                <ul class="history" id="neonText">
+                    
+
+                </ul>
+
+                <br><br><br><br><br><br>
+            <!-- </div> -->
+
+            </div>
+
+</div>
+    <!-- ----------------------------------------------------------- -->
+    
+    <!-- <div>
+        <b><?php echo $_SESSION['id'] . "님이 입장하셨습니다."?></b>
+    </div> -->
+</body>
+</html>
+
+
+
+
+
+<script>
+    
+    var score = 0;
+    var count=0;    
+    var start = '개나리';
+    
+    function GameStart(){
+        
+        document.querySelector('#start').innerHTML ="시작단어는  :  " + start + "   입니다.";
+        
+
+        //시작단어
+        console.log(start);
+    }
+
+
+    function show_name(e){
+        
+        
+        if(count==0){
+            document.querySelector('#turn').innerHTML = "내 차례";
+            count = count+1;   
+            score = score + 100;
+            postScore(score);
+            score = 0;
+            // console.log('if==0');
+            // console.log(count);
+            // console.log(score);
+            
+
+        }
+        else{
+            document.querySelector('#turn').innerHTML = "상대방 차례";
+            count = count-1;
+            score = score + 100;
+            postScore(score);
+            score = 0;
+            // console.log('if==1');
+            // console.log(count);
+            // console.log(score);
+
+            
+        }
+        
+        }
+        
+    
+    
+//--------------------------------------------------------------
+    function button() {
+    
+    // var word = document.createElement('li');
+    // word.innerText =  document.querySelector('#send').value;
+    // document.querySelector('.history').appendChild(word);
+
+    //입력단어
+    // console.log(word.innerText);
+    chk();
+    
+
+}
+//---------------------------------------------------------
+    function chk() {
+        //answer 유저답안
+        //start 컴퓨터 답안
+        //console.log(answer[1]);
+        //console.log(start[0]);
+        
+        var answer = document.querySelector('#send').value;
+        if(start[2] == answer[0]){
+            var word = document.createElement('li');
+            word.innerText =  document.querySelector('#send').value;
+            document.querySelector('.history').appendChild(word);
+            
+
+            start = answer;
+            document.querySelector('#start').innerHTML=start;
+
+
+
+
+    }else{
+        alert('잘못입력했습니다.');
+    }
+}
+focusMethod = function getFocus() {
+  document.querySelector('#send').focus();
+}
+    
+function textreset(){
+    document.querySelector('#send').value="";
+}
+    
+function enterkey() {
+    if (window.event.keyCode == 13){
+        //엔터 눌렀을때
+        dostart();
+        
+    }
+}
+function dostart(){
+    button(); 
+    focusMethod(); 
+    textreset();
+}
+
+
+
+
+</script>

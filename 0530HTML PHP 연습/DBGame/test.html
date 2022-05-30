@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+.neonText {
+  animation: flicker 1.5s infinite alternate;
+  color: #fff;
+}
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px black,
+      0 0 80px black,
+      0 0 90px black,
+      0 0 100px black,
+      0 0 150px black;
+  
+  }
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
+}
+
+
+
+</style>
+<body>
+    <div class="container">
+        <h1 class="neonText">
+              404
+        </h1>
+        
+    
+     </div>
+</body>
+</html>
