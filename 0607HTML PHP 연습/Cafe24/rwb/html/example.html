@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    	* {
+    		margin: 0;
+    		padding: 0;
+    		box-sizing: border-box;
+			
+    	}
+    	#container {
+    		width: 960px;
+    		margin: 0 auto;
+			border: solid;
+    	}
+    	#header {
+    		margin-bottom: 15px;
+            display: inline-flex;
+            text-align: center;
+            background-color: lightgray;
+    	}
+        #footer{
+            background-color: lightgray;
+            text-align: center;
+        }
+    	#header, #footer, #contents{
+    		padding: 25px;
+    		border: 1px solid;
+    	}
+    	#main {
+    		margin-bottom: 15px;
+    	}
+    	#main::after {
+    		content: '';
+    		clear: both;
+    		display: table;
+    	}
+    	#contentOne, #sidebar, #contentTwo {
+    		float: left;
+    		border: 1px solid;
+    		/* padding: 140px 0 0 20px; */
+    	}
+    	#contentOne {
+            float: left;
+    		width: calc(100% - 515px);
+            height: 150px;
+    		margin-right: 15px;
+            text-align: center;
+            padding-top: 65px;
+            
+
+    	}
+        #contentTwo{
+            width: calc(100% - 515px);
+            height: 150px;
+    		margin-right: 15px;
+            text-align: center;
+            float: left;
+            padding-top: 65px;
+
+        }
+    	#sidebar {
+            float: right;
+            margin-right: 15px;
+            height: 300px;
+            width: calc(100% - 515px);
+            text-align: center;
+            background-color: lightgray;
+            padding: 140px 0 0 20px;
+            
+    	}
+        #logo{
+            
+            margin-right: 250px;
+            padding: 10px;
+
+        }
+
+        #navigation{
+            border: 1px solid;
+            margin-right: 195px;
+            padding: 10px;
+            width: 200px;
+        
+        }
+
+        #icons{
+            border: 1px solid;
+            padding: 10px;
+            width: 200px;
+            
+
+        }
+        #contents::after {
+    		content: '';
+    		clear: both;
+    		display: table;
+    	}
+        #name{
+            float: left;
+            width: calc(100% - 515px);
+            height: 50px;
+        }
+
+        #message{
+            float: right;
+            width: calc(100% - 415px);
+            height: 100px;
+        }
+        #email{
+            float: left;
+            width: calc(100% - 515px);
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+			<div id="logo"><h3>logo</h3></div>
+            <div id="navigation">main navigation</div>
+            <div id="icons">socila media icons</div>
+		</div>
+		<div id="main">
+			<div id="contentOne">Titel and Description</div>
+			<div id="sidebar">my photo</div>
+            <div id="contentTwo">Social media links</div>
+		</div>
+
+        <div id="contents">
+            <input id="name" type="text" placeholder="name">
+            <input id="message" type="text" placeholder="message">
+            <input id="email" type="email" placeholder="email">
+
+        </div>
+		<div id="footer">
+			<h2>footer</h2>
+            
+		</div>
+    </div>
+</body>
+</html>
