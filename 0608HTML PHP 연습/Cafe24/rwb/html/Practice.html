@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        list-style: none;
+    }
+.container{
+    width: 960px;
+    margin: 0 auto;
+
+}
+
+.logo{
+    float: left;
+    width: 200px;
+
+}
+.nav{
+    float: left;
+    width: calc(960px - 200px);
+
+}
+
+.clearfix::after{
+    content: '';
+    clear: both;
+    display: table;    
+    
+}
+.nav > ul {
+    float: right;    
+}
+
+.nav > ul > li{
+    float: left;
+    margin-right: 15px;
+}
+.nav > ul > li:last-child{
+    margin-right: 0;
+}
+header{
+    height: 75px;
+    border-bottom: 1px solid black;
+}
+
+.header > .container, .top-nav{
+    height: 100%;
+}
+</style>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="container">
+            <div class="top-nav clearfix">
+                <div class="logo clearfix">logo</div>
+                <div class="nav clearfix">
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Team</li>
+                        <li>P</li>
+                        <li>C</li>
+                    </ul>
+                </div>
+                
+            </div>
+
+            </div>
+        </header>
+        <main></main>
+        <footer></footer>
+
+    </div>
+    
+</body>
+</html>
