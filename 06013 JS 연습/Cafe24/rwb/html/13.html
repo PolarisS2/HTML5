@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>고정 그리드 시스템</title>
+	<style>
+		/*1열: 67
+		2열: 154
+		3열: 241
+		4열: 328
+		5열: 415
+		6열: 502
+		7열: 589
+		8열: 676
+		9열: 763
+		10열: 850
+		11열: 937
+		12열: 1024
+
+		1열: 6.54296875
+		2열: 15.0390625
+		3열: 23.53515625
+		4열: 32.03125
+		5열: 40.52734375
+		6열: 49.0234375
+		7열: 57.51953125
+		8열: 66.015625
+		9열: 74.51171875
+		10열: 83.0078125
+		11열: 91.50390625
+		12열: 100;
+
+		*/
+		.row {
+
+		}
+		.container {
+			width: 85%;
+			margin: 0 auto;
+		}
+		.row::after {
+			content: '';
+			clear: both;
+			display: table;
+		}
+		[class^=col] {
+			float: left;
+			margin-right: 1.953125%;
+		}
+		[class^=col]:last-child {
+			margin-right: 0;
+		}
+		.col-1 {
+			width: 6.54296875%;
+		}
+		.col-2 {
+			width: 15.0390625%;
+		}
+		.col-3 {
+			width: 23.53515625%;
+		}
+		.col-4 {
+			width: 32.03125%;
+		}
+		.col-5 {
+			width: 40.52734375%;
+		}
+		.col-6 {
+			width: 49.0234375%;
+		}
+		.col-7 {
+			width: 57.51953125%;
+		}
+		.col-8 {
+			width: 66.015625%;
+		}
+		.col-9 {
+			width: 74.51171875%;
+		}
+		.col-10 {
+			width: 83.0078125%;
+		}
+		.col-11 {
+			width: 91.50390625;
+		}
+		.col-12 {
+			width: 100%;
+		}
+
+		[class^=col] > div {
+			height: 500px;
+			background-color: red;
+		}
+
+		@media screen and (max-width: 500px) {
+			.sm-col-1 {
+				width: 6.54296875%;
+			}
+			.sm-col-2 {
+				width: 15.0390625%;
+			}
+			.sm-col-3 {
+				width: 23.53515625%;
+			}
+			.sm-col-4 {
+				width: 32.03125%;
+			}
+			.sm-col-5 {
+				width: 40.52734375%;
+			}
+			.sm-col-6 {
+				width: 49.0234375%;
+			}
+			.sm-col-7 {
+				width: 57.51953125%;
+			}
+			.sm-col-8 {
+				width: 66.015625%;
+			}
+			.sm-col-9 {
+				width: 74.51171875%;
+			}
+			.sm-col-10 {
+				width: 83.0078125%;
+			}
+			.sm-col-11 {
+				width: 91.50390625;
+			}
+			.sm-col-12 {
+				width: 100%;
+			}
+			.sm-none {
+				display: none;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-8 sm-col-6">
+				<div></div>
+			</div>
+			<div class="col-4 sm-col-6">
+				<div></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6 sm-col-12">
+				<div></div>
+			</div>
+			<div class="col-6 sm-none">
+				<div></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>고정 그리드 시스템</title>
+    <script>
+        let total = 1024, col = 67, gap = 20, cntCol = 12;
+
+for (let i = 1; i <= cntCol; i++) {
+    // 컬럼의 넓이 * 컬럼 수 + 커터 * (컬럼 수 - 1)
+    console.log(`${i}열: ${col * i + gap * (i - 1)}`);
+    //console.log(i + "열: " + (col * i + gap * (i - 1)));
+}
+    </script>
+	<style>
+		/*1열: 67
+		14 2열: 154
+		14 3열: 241
+		14 4열: 328
+		14 5열: 415
+		14 6열: 502
+		14 7열: 589
+		14 8열: 676
+		14 9열: 763
+		14 10열: 850
+		14 11열: 937
+		14 12열: 1024*/
+		.row {
+
+		}
+		.container {
+			width: 1024px;
+			margin: 0 auto;
+		}
+		.row::after {
+			content: '';
+			clear: both;
+			display: table;
+		}
+		[class^=col] {
+			float: left;
+			margin-right: 20px;
+		}
+		[class^=col]:last-child {
+			margin-right: 0;
+		}
+		.col-1 {
+			width: 67px;
+		}
+		.col-2 {
+			width: 154px;
+		}
+		.col-3 {
+			width: 241px;
+		}
+		.col-4 {
+			width: 328px;
+		}
+		.col-5 {
+			width: 415px;
+		}
+		.col-6 {
+			width: 502px;
+		}
+		.col-7 {
+			width: 589px;
+		}
+		.col-8 {
+			width: 676px;
+		}
+		.col-9 {
+			width: 763px;
+		}
+		.col-10 {
+			width: 850px;
+		}
+		.col-11 {
+			width: 937px;
+		}
+		.col-12 {
+			width: 1024px;
+		}
+
+		[class^=col] > div {
+			height: 500px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+			<div class="col-1">
+				<div></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4">
+				<div></div>
+			</div>
+			<div class="col-8">
+				<div></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<div></div>
+			</div>
+			<div class="col-6">
+				<div></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html> -->
