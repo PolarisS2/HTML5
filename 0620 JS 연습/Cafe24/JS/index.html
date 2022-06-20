@@ -1,0 +1,823 @@
+<head></head>
+<body>
+</body>
+<script type="text/javascript">
+    //     let div = {
+    //     input: document.createElement('input'),
+    //     button: document.createElement('button'),
+    //     li:document.createElement('li'),
+
+    //     init: function(target){
+    //         this.input.placeholder = '좋아하는 과일을 입력하세요';
+    //         this.input.required="required /";
+    //         this.input.autofocus="autofocos /";
+    //         target.appendChild(this.input);
+    //         target.appendChild(this.button);
+    //         target.appendChild(this.li);
+
+    //         this.button.innerText='입력';
+    //         this.button.onclick=function (){
+                
+    //         this.li = this.input.value;
+    //         }
+            
+            
+    //     }
+    // };
+    // div.init(document.body);
+
+    
+    // let arr= new Array();
+    
+    // for(i=0; i<5; i++){
+    //     arr = prompt('넣을 값을 적으시오');
+    //     console.log(arr);
+    // }
+    
+    
+    
+    
+
+
+    // let result = max(23,4,45,65,32,43,15,12,51);
+    // console.log(result);
+    
+    // function max(){
+    //     let max=0;
+    //     let loop = arguments.length;
+    //     // console.log(arguments);
+
+    //     for(let i=0; i<arguments.length; i++){
+    //         if( max < arguments[i]){
+    //             max = arguments[i];
+    //         }
+    //     }
+    //     return max;
+    // }
+    
+    
+    
+    
+
+
+
+    // let div = {
+    //     input: document.createElement('input'),
+    //     button: document.createElement('button'),
+
+    //     init: function(target){
+    //         this.input.placeholder = 'email';
+    //         this.input.required="required /";
+    //         this.input.autofocus="autofocos /";
+    //         target.appendChild(this.input);
+    //         target.appendChild(this.button);
+
+
+
+    //         this.button.innerText='입력';
+    //         this.button.onclick=function (){
+    //             confirm('보내시겠습니까?');
+    //         }
+            
+            
+    //     }
+    // };
+    // div.init(document.body);
+   
+
+
+
+    // AM, PM
+    //     12시간제
+    //     모든 자리는 두자리로 표시
+    //     버튼을 등록 후 멈춤
+    
+
+    // let clock = { //객체 생성자 함수
+    //     btn: document.createElement("button"),
+    //     div: document.createElement('div'),
+    //     // timer: null,
+    //     init: function(target) {
+    //         let link = document.createElement('link');
+    //         link.rel = 'stylesheet';
+    //         link.href = 'https://fonts.googleapis.com/css2?family=Fascinate&display=swap';
+    //         document.head.appendChild(link);
+
+    //         // btn.innerText = 'STOP';
+    //         let txt = document.createTextNode('STOP');
+    //         this.btn.appendChild(txt);
+
+    //         //이벤트는 등록 개념
+    //         // this.btn.onclick = function(){
+                
+    //         // }
+
+    //         //this.div.id = "clock";
+    //         target.appendChild(this.div);
+    //         target.appendChild(this.btn);
+    //         this.style();
+    //         this.run();
+    //     },
+    //     run: function() {
+    //         let self = this;
+    //         let timer = this.start();
+    //         this.btn.onclick=function(){
+    //             if(this.innerText == 'STOP'){
+    //                 clearInterval(timer);
+    //                 this.innerText='RUN';
+    //             }
+    //             else{
+    //                 timer = self.start();
+    //                 this.innerText='STOP';
+    //             }    
+    //         }
+    // },
+    //     style: function() {
+    //         this.div.style.fontSize = '5vw';
+    //         this.div.style.color = 'red';
+    //         this.div.style.fontWeight = 'bold';
+    //         this.div.style.fontFamily = 'Fascinate';
+    //     },
+    //     setDigit: function(num){
+    //         return num > 9 ? num : '0' + num;
+    //     },
+    //     start: function(){
+    //         let self = this;
+    //         let timer = setInterval(function() { //this
+    //             let now = new Date();
+    //             let hour = now.getHours();
+    //             let strHour = hour > 12 ?  `PM ${hour - 12}` : ` AM ${self.setDigit(hour)}`;
+                
+    //             self.div.innerText = strHour + ":" + self.setDigit(now.getMinutes()) + ":" + self.setDigit(now.getSeconds());
+    //         }, 1000);
+
+    //         return timer;
+            
+    //     }
+    // };
+    // clock.init(document.body);
+
+
+        // console.log(Date.now());//정적 메소드
+        // let now = new Date();
+        // console.dir(now);
+        // console.dir(now.getDate());
+        // switch(now.getDay()){//0-6
+        //     case 0:
+        //         console.log('월요일');
+        //         break;
+        //     case 1:
+        //         console.log('화요일');
+        //         break;
+        //     case 2:
+        //         console.log('수요일');
+        //         break;
+        //     case 3:
+        //         console.log('목요일');
+        //         break;
+        //     case 4:
+        //         console.log('금요일');
+        //         break;
+        //     case 5:
+        //         console.log('토요일');
+        //         break;
+        //     case 6:
+        //         console.log('일요일');
+        //         break;
+            
+
+        // }
+        // // 1000=1초
+        // // 타이머 객체를 반환한다.
+        // let inter = 0;
+        // let timer = setInterval(function(){
+        //     let now = new Date();
+        //     document.body.innerHTML = (`${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()}`);
+        //     inter++;
+        //     if(inter == 10){
+        //         clearInterval(timer); // 시간을 멈추는 명령
+        //     }
+        // }, 1000);
+    
+        
+        // for , while = > 단순반복
+        // setInterval => 시간에 따른 반복
+        // setTimeout => 일정시간 대기 후 작동
+
+        // let ladder = {
+        //     step: 0,
+        //     up() {
+        //         this.step++;
+        //         return this;
+        //     },
+        //     down() {
+        //         Number(this.step--);
+        //         return this;
+        //     },
+        //     showStep: function() { 
+        //         alert(`지금 층수는 ${this.step}층 입니다.`);
+                
+        //     }
+        // };
+        // ladder.up().up().up().up().down().showStep();
+            
+
+        
+
+        // var calculator = {
+        //     read(x,y){
+        //         this.x = prompt('값을 입력하세요');
+        //         this.y = prompt('값을 입력하세요');
+
+        //     },
+        //     sum(){
+        //         return  Number(this.x) + Number(this.y);
+        //     },
+
+        //     mul(){
+        //         return  this.x * this.y;
+        //     }
+        // };
+        // calculator.read();
+        // alert(calculator.sum());
+        // alert(calculator.mul());
+
+
+
+
+
+
+    //     let user = { //개체안의 속성
+    //         name: "John",
+    //         sizes:{
+    //             height:182,
+    //             width: 50
+    //         },
+        
+    //     say: function(words){ //객체 안의 함수를 메서드
+    //         console.log(words);
+
+    //     },
+    //     walk: () =>{ //화살표 함수에서는 this가 없다.
+    //         console.log("걷는다");
+    //     },
+    //     intro: function(){
+    //         console.log(`저의 이름은 ${this.name} 입니다.`)
+    //         this.say('반갑습니다.');
+    //     }
+    // };
+    // user.say("Hello");
+    // user.walk();
+    // user.sleep = function(x){
+    //     setTimeout(function(){ //정해진 시간 후에 한번만 실행
+    //         console.log("일어남");
+    //     },x);
+    
+    // };
+    // user.sleep(3000);
+    // user.intro();
+    
+    
+        
+        
+        // let salaries = {
+        // John: 100,
+        // Ann: 160,
+        // Pete: 130
+        // };
+
+        // function sumSalaries(obj){
+        //     var sum = 0;
+        //         for(var key in obj){
+        //         sum += obj[key];
+                
+        //     }
+        //     return sum;
+        // }
+        // console.log(sumSalaries(salaries));
+
+
+
+
+        // let schedule = {};
+        // alert( isEmpty(schedule) );
+        // schedule["8:30"] = "get up";
+        // alert( isEmpty(schedule) );
+        // function isEmpty(obj) {
+        // for (let key in obj) {
+        //     // if the loop has started, there is a property
+        //         return false;
+        //     }
+        //     return true;
+        // }
+
+        
+
+
+       
+
+
+
+        // var user = {};
+        // console.log(user);
+        // user.name = 'John';
+        // console.log(user);
+        // user.surname = 'Smith';
+        // console.log(user);
+        // user.name = 'Pete';
+        // console.log(user);
+        // delete user.name;
+        // console.log(user);
+
+
+
+        // let menu = {
+        // width: 200,
+        // height: 300,
+        // title: "My menu"
+        // };
+
+        // function multiplyNumeric(obj) {
+        //     for (let key in obj) {
+        //     if (typeof obj[key] == 'number') {
+        //     obj[key] *= 2;
+        //     }
+        // }
+        // }
+        // multiplyNumeric(menu);
+        // console.log(menu);
+
+
+
+
+
+
+
+
+
+
+        // let me = new Object(); //me 객체
+        // me.name = "고길동";
+        // me['age'] = 28;
+        // me.isAdmin = false;
+
+        // let you = {
+        //     name: "홍길동",
+        //     age: 10,
+        //     'speed walk': 15
+        // }; //you 객체
+        // you.isAdmin = true;
+
+        // console.dir(me['age']);
+        // console.dir(you.name);
+        // console.log(you['speed walk']);
+        // if (me.isAdmin) {
+        //     console.log('어드민이름: ' + me.name);
+        // }
+
+        // function checkAdmin(People) {
+        //     if (People.isAdmin) {
+        //         return People.name + '은 어드민입니다.';
+        //     }
+
+        //     return People.name + ' 평민입니다.';
+        // }
+
+        // console.log(checkAdmin(you));
+        // console.log(checkAdmin(me));
+
+        // delete you.age;
+        // console.dir(you);
+        // you = null;
+        // console.dir(you);
+
+
+
+
+
+
+
+
+
+
+
+
+        // //최소값
+        // function min(a,b){
+        //     if(a<b){
+        //         return a;
+        //     }else return b;
+
+        // }
+        // alert (min(4,3));
+
+
+        // //제곱근
+        // function pow(x,n){
+        //     var a=x;
+        //     for(i=1; i<n; i++){
+        //         a *=x;
+        //     }
+        //     return a;
+
+        // }
+        // alert(pow(2,10));
+        
+        
+        
+        // var age = prompt('나이를 입력하세요',19);
+        // function checkAge(age) {
+        // return (age > 18) ? alert('상영시작') : confirm('보호자의 동의를 받으셨나요');
+        // }
+        // checkAge();
+
+
+
+
+
+
+        // function showMovie(){
+        //     if(!checkAge(age)){
+        //         return;
+        //     }
+        //     alert('영화 상영');
+
+
+        // }
+        //     function checkAge(age){
+        //         if(age>=18){
+        //             return true;
+        //         }else{
+        //             return confirm('보호자의 동의를 받으셨나요?');
+        //         }
+        //         return false;
+        //     }
+        //     let age = prompt('나이를 알려주세요.',18);
+        //     // if(checkAge(age)){
+        //     //     alert('접속하용');
+        //     // }else{
+        //     //     alert('접속차단');
+        //     // }
+
+        //     showMovie(18);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        // var userName = prompt("사용자 이름을 입력해주세요.");
+        // var count=0;
+        // switch(userName){
+        //     case 'Admin':
+        //         alert('환영합니다');
+        //         password = prompt("비밀번호를 입력해주세요.");
+                
+        //         if(password == 'Master'){
+        //             alert('로그인에 성공했습니다');
+        //         }
+        //         while(password != 'Master')
+        //         {   
+        //             password = prompt("비밀번호를  다시 입력해주세요.");
+        //             alert('비밀번호가 틀렸습니다');
+        //             count++;
+        //             console.log(count);
+                
+        //              if(count == 5){
+        //                 alert('프로그램을 강제종료합니다');
+                        
+        //             }
+        //             break;
+                
+        //     }
+                
+        //     case '' || null:
+        //         alert('취소했거나 공백입니다.');
+        //         break;
+            
+        //     default:
+        //         alert('아이디가 틀렸습니다');
+                
+            
+        //         while(userName !='Admin'){
+        //             userName = prompt("[아이디가 잘못되었습니다] 사용자 이름을 입력해주세요.");
+        //             if(userName == 'Admin'){
+        //                 alert('환영합니다');
+                    
+        //             var password = prompt("비밀번호를 입력해주세요.");
+        //             switch(password){
+        //                 case 'Master':
+        //                     alert('환영합니다');
+        //                     break;
+                        
+        //                 case '' || null:
+        //                     alert('취소했거나 공백입니다.');
+        //                     break;
+                        
+        //                 default:
+        //                     alert('비밀번호가 틀렸습니다');
+        //                     while(password != 'Master')
+        //                         password = prompt('[비밀번호가 잘못되었습니다] 다시입력하세요');
+        //                         count++;
+        //                         if(count==5){
+        //                             alert('5회틀렸습니다. 강제종료합니다');
+        //                             break;
+        //                         }
+        //                     if(password == 'Master'){
+        //                         alert('로그인했습니다.');
+        //                 }
+        //             }
+        //         }
+        //     }
+        
+
+        // }
+
+        
+        //입력받은 수를 1 부터의 합계를 구하는 프로그램
+        // for(i=1; i<4; i++){
+        //     var inNum = prompt('숫자를 입력하세요');
+        //     var a = Number(inNum);
+        //     a += Number(inNum);
+        // }
+        // console.log(a);
+        
+        
+        // var browser = prompt("브라우저 종류를 입력하세요");
+
+        // if(browser == 'Edge'){
+        //     alert('Edge를 사용하네요');
+        // }else if (browser == 'Chrome'){
+        //     alert('Chrome를 사용하네요');
+        // }else if(browser == 'Firefox'){
+        //     alert('Firefox를 사용하네요');
+        // }else if(browser == 'Safari'){
+        //     alert('Safari를 사용하네요');
+        // }else if(browser == 'Opera'){
+        //     alert('Opera를 사용하네요');
+        // }else alert('뭐사용하세요?');
+
+
+
+
+
+
+
+
+        
+        //  for(i=1; i<10; i++){
+        //     console.log("=========="+ i +"단================")
+        //     for(j=1; j<10; j++){
+        //         test = (i + "*" + j + "=" + i*j);
+                
+                
+        //         console.log(test);
+                
+        //     }
+                   
+        // }
+        // document.body.innerHTML = "<table border=\"1\"><tr><td>test</td></tr></table>";
+
+        // document.querySelector().innerHTML = test;
+        
+
+        
+    
+    
+        // for (var i = 2; i < 11; i++) { 
+
+        //     for (var j = 2; j < i; j++) { 
+        //         if (i % j == 0)
+        //         i++;
+        //         continue; 
+        // }
+        // console.log(i);
+        // }
+        
+        
+            
+
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        // var n=10;
+        // var pn;
+        // for(i=2; i<10; i++){
+        //     if((n%i) == 0){
+        //         pn=i;   
+        //     }
+            
+
+        //     console.log('소수는'+ pn + '입니다.');
+        // }
+
+
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // var sex = prompt('성별을 입력하세요');
+        // var height = prompt('키를 입력하세요');
+        // var weight = prompt('몸무게를 입력하세요');
+        // var man = 22 * (height/100) * (height/100);
+        // var woman =21 * (height/100) * (height/100);
+        // var manbmi = weight / man * 100;
+        // var womanbmi = weight / woman * 100;
+        // if(sex == '남자'){
+        //     if( manbmi < 90){
+        //         alert('저체중');
+        //     }else if (90 <=manbmi && manbmi < 110){
+        //         alert('정상체중');
+        //     }else if(110 <= manbmi && manbmi <120){
+        //         alert('과체중');
+        //     }else alert('비만입니다');            
+        // }
+
+        // if(sex == '여자'){
+        //     if( womanbmi < 90){
+        //         alert('저체중');
+        //     }else if (90 <=womanbmi && womanbmi < 110){
+        //         alert('정상체중');
+        //     }else if(110 <= womanbmi && womanbmi <120){
+        //         alert('과체중');
+        //     }else alert('비만입니다');            
+        // }
+
+
+        // var height = prompt('키를 입력하세요');
+        // var weight = prompt('몸무게를 입력하세요');
+        // var bmi = weight / ((height/100)*(height/100));
+        // if(bmi < 18.5){
+        //     alert('저체중입니다');
+        // }else if(bmi <= 23){
+        //     alert('정상 체중입니다.');
+        // }else if(bmi <=25){
+        //     alert('과체중입니다');
+        // }else if(bmi <=30){
+        //     alert('비만입니다.');
+        // }else alert('고도비만입니다.');
+
+
+        // var id = prompt('아이디를 입력하세요');
+        // var password = String(1234);
+        // if(id == 'Admin'){
+        //     var pw = prompt('비밀번호를 입력하세요');
+        //     if(pw == password){
+        //         alert('환영합니다');
+        //     }else if(pw == '' ||null){
+        //         alert('취소하셨습니다');
+        //     }else{
+        //         alert('인증에 실패했습니다.');0
+        //     }
+            
+        // }else{
+        //     alert('아이디가 틀렸거나 회원이 아닙니다.');
+        // }
+
+ 
+    
+        // var agent = window.navigator.userAgent.toLowerCase();
+        // var browserName;
+        // switch(true){
+        //     case agent.indexOf("edge") > -1:
+        //     browserName = "MS Edge";
+        //     break;
+
+        //     case agent.indexOf("edg/") > -1:
+        //     browserName = "Edge (chromium based)";
+        //     break;
+
+        //     case agent.indexOf("opr") > -1 && !!window.opr: 
+        //     browserName = "Opera";
+        //     break;
+
+        //     case agent.indexOf("chrome") > -1 && !!window.chrome:
+        //     browserName = "Chrome";
+        //     break;
+
+        //     case agent.indexOf("trident") > -1:
+        //     browserName = "MS IE";
+        //     break;
+
+        //     case agent.indexOf("firefox") > -1:
+        //     browserName = "Mozilla Firefox";
+        //     break;
+
+        //     case agent.indexOf("safari") > -1:
+        //     browserName = "Safari";
+        //     break;
+        
+        //     default:
+        //     browserName = "other";
+        // }
+
+        // document.querySelector("h1").innerText = browserName;
+
+
+// let str = '';
+
+// str += '<table border ="1">';
+//     // str = str + '<table border ="1">';
+    
+
+// for(let i = 1; i< 10; i++){
+//     // if(i==1 || i==4 || i == 7) str += '<tr>';
+//         if(i%3 ==1) str += '<tr>';
+
+//         str += '<td>';
+//         for(let j = 1; j < 10; j++){
+//             str += i + "x" + j + "=" + i * j + '<br>';
+//         }
+//         str += '</td>';
+        
+//         // if(i == 3 || i == 6 || i == 9) str += '</tr>';
+//         if(i % 3 == 0) str += '</tr>';
+// }
+//     str += '</table>';
+    
+//     document.body.innerHTML = str;
+    
+
+
+    //     for(i=1; i<10; i++){
+    //        console.log("=========="+ i +"단================")
+           
+    //        for(j=1; j<10; j++){
+    //            test = (i + "*" + j + "=" + i*j);
+    //            arr = test;
+    //         //    console.log(test);
+    //         document.body.innerHTML = "<table border=\"1\"><tr><td>"+ test +"</td></tr></table>";
+            
+            
+               
+            
+    //        }
+           
+    //    }
+       
+
+</script>
+<!-- </body> -->
