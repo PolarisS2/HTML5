@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #btn{
+        margin: 0 auto;
+        width: 80px;
+        height: 60px;
+        float: left;
+
+    }
+    #container{
+        float: left;
+        width: 320px;
+    }
+    #input{
+        float: left;
+    }
+    /* #one{
+
+    }
+    #two{
+        
+    }
+    #three{
+        
+    }
+    #four{
+        
+    }
+    #five{
+        
+    }
+    #six{
+        
+    } */
+</style>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let container = {
+        containerDiv: document.createElement('div'),
+        inputDiv: document.createElement('div'),
+        resultDiv: document.createElement('div'),
+        contentOne: document.createElement('div'),
+        contentTwo: document.createElement('div'),
+        contentThree: document.createElement('div'),
+        contentFour: document.createElement('div'),
+        contentFive: document.createElement('div'),
+        contentSix: document.createElement('div'),
+        
+        inputOne: document.createElement('input'),
+        inputTwo: document.createElement('input'),
+        
+        // --------------------첫번째 줄-----------------------------
+        perbtn: document.createElement('button'), //백분율
+        cebtn: document.createElement('button'),
+        cbtn: document.createElement('button'),
+        delbtn: document.createElement('button'),
+        // --------------------두번째 줄-----------------------------
+        fractionbtn: document.createElement('button'), //분수
+        squaredbtn: document.createElement('button'), //제곱
+        rootbtn: document.createElement('button'), //루트
+        modbtn: document.createElement('button'), //나머지
+        // --------------------세번째 줄-----------------------------
+        sevenbtn: document.createElement('button'), // 7
+        eightbtn: document.createElement('button'), // 8
+        ninebtn: document.createElement('button'), // 9
+        mulbtn: document.createElement('button'), // 곱하기
+        
+        // --------------------네번째 줄-----------------------------
+        fourbtn: document.createElement('button'), // 4
+        fivebtn: document.createElement('button'), // 5
+        sixbtn: document.createElement('button'), // 6
+        minusbtn: document.createElement('button'), // 뺴기
+        // --------------------다섯번째 줄-----------------------------
+        onebtn: document.createElement('button'), // 1
+        twobtn: document.createElement('button'), // 2
+        threebtn: document.createElement('button'), // 3
+        plusbtn: document.createElement('button'), // 더하기
+        // --------------------여섯번째 줄-----------------------------
+        reversebtn: document.createElement('button'), // 부호반전
+        zerobtn: document.createElement('button'), // 0
+        dotbtn: document.createElement('button'), // 소숫점
+        resultbtn: document.createElement('button'), // =
+
+
+    init:function(target){
+        let inputNum = document.querySelector('#input');
+        target.appendChild(this.containerDiv);
+        this.containerDiv.id="container";
+        this.containerDiv.appendChild(this.inputDiv);
+        this.inputDiv.id="input";
+        this.containerDiv.appendChild(this.resultDiv);
+
+        this.inputDiv.appendChild(this.inputOne);
+        
+        this.resultDiv.appendChild(this.inputTwo);
+        this.resultDiv.id="result";
+
+
+        this.containerDiv.appendChild(this.contentOne);
+        this.contentOne.id="one";
+        this.containerDiv.appendChild(this.contentTwo);
+        this.contentTwo.id="two";
+        this.containerDiv.appendChild(this.contentThree);
+        this.contentThree.id="three";
+        this.containerDiv.appendChild(this.contentFour);
+        this.contentFour.id="four";
+        this.containerDiv.appendChild(this.contentFive);
+        this.contentFive.id="five";
+        this.containerDiv.appendChild(this.contentSix);
+        this.contentSix.id="six";
+
+
+        this.inputOne.style.width="312px";
+        this.inputOne.style.height="40px";
+        this.inputTwo.style.width="312px";
+        this.inputTwo.style.height="40px";
+        
+
+        // --------------------첫번째 줄-----------------------------
+        this.contentOne.appendChild(this.perbtn);
+        this.perbtn.id="btn";
+        this.perbtn.innerText="%";
+        this.contentOne.appendChild(this.cebtn);
+        this.cebtn.id="btn";
+        this.cebtn.innerText="CE";
+        this.contentOne.appendChild(this.cbtn);
+        this.cbtn.id='btn';
+        this.cbtn.innerText="C";
+        this.contentOne.appendChild(this.delbtn);
+        this.delbtn.id='btn';
+        this.delbtn.innerText= "지우기";
+        // --------------------두번째 줄-----------------------------
+        this.contentTwo.appendChild(this.fractionbtn);
+        this.fractionbtn.id='btn';
+        this.fractionbtn.innerText="1/x";
+        this.contentTwo.appendChild(this.squaredbtn);
+        this.squaredbtn.id='btn';
+        this.squaredbtn.innerText="x^2";
+        this.contentTwo.appendChild(this.rootbtn);
+        this.rootbtn.id='btn';
+        this.rootbtn.innerText= "루트";
+        this.contentTwo.appendChild(this.modbtn);
+        this.modbtn.id='btn';
+        this.modbtn.innerText="/";
+        // --------------------세번째 줄-----------------------------
+        this.contentThree.appendChild(this.sevenbtn);
+        this.sevenbtn.id='btn';
+        this.sevenbtn.innerText="7";
+
+        this.contentThree.appendChild(this.eightbtn);
+        this.eightbtn.id='btn';
+        this.eightbtn.className='eight';
+        this.eightbtn.innerText="8";
+        this.eightbtn.onclick = function(){
+            this.inputNum = Number(document.querySelector('.eight').innerHTML);
+            document.querySelector('#input').innerHTML = this.inputNum;
+        }
+
+        this.contentThree.appendChild(this.ninebtn);
+        this.ninebtn.id='btn';
+        this.ninebtn.className= "nine";
+        this.ninebtn.innerText="9";
+        this.ninebtn.onclick = function(){
+            this.inputNum = Number(document.querySelector('.nine').innerHTML);
+            document.querySelector('#input').innerHTML = this.inputNum;
+            
+            // console.log(document.querySelector('.nine').innerHTML);
+            
+        }
+        
+
+        this.contentThree.appendChild(this.mulbtn);
+        this.mulbtn.id='btn';
+        this.mulbtn.innerText="X";
+        // --------------------네번째 줄-----------------------------
+        this.contentFour.appendChild(this.fourbtn);
+        this.fourbtn.id='btn';
+        this.fourbtn.innerText="4";
+        this.contentFour.appendChild(this.fivebtn);
+        this.fivebtn.id='btn';
+        this.fivebtn.innerText="5";
+        this.contentFour.appendChild(this.sixbtn);
+        this.sixbtn.id='btn';
+        this.sixbtn.innerText="6";
+        this.contentFour.appendChild(this.minusbtn);
+        this.minusbtn.id='btn';
+        this.minusbtn.innerText="- (뺴기)";
+        // --------------------다섯번째 줄-----------------------------
+        this.contentFive.appendChild(this.onebtn);
+        this.onebtn.id='btn';
+        this.onebtn.innerText="1";
+        this.contentFive.appendChild(this.twobtn);
+        this.twobtn.id='btn';
+        this.twobtn.innerText="2";
+        this.contentFive.appendChild(this.threebtn);
+        this.threebtn.id='btn';
+        this.threebtn.innerText="3";
+        this.contentFive.appendChild(this.plusbtn);
+        this.plusbtn.id='btn';
+        this.plusbtn.innerText="+";
+        // --------------------여섯번째 줄-----------------------------
+        this.contentSix.appendChild(this.reversebtn);
+        this.reversebtn.id='btn';
+        this.reversebtn.innerText="+/-";
+        this.contentSix.appendChild(this.zerobtn);
+        this.zerobtn.id='btn';
+        this.zerobtn.innerText="0";
+        this.contentSix.appendChild(this.dotbtn);
+        this.dotbtn.id='btn';
+        this.dotbtn.innerText=". (점)";
+        // this.dotbtn.style.fontSize="50px";
+        this.contentSix.appendChild(this.resultbtn);
+        this.resultbtn.id='btn';
+        this.resultbtn.innerText="=";   
+    }
+        
+        
+    };
+
+
+    
+container.init(document.body);
+</script>

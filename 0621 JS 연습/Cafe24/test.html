@@ -1,0 +1,35 @@
+<style>
+    .alert {
+      position: relative;
+      padding: 15px;
+      border: 1px solid #d6e9c6;
+      border-radius: 4px;
+      color: #3c763d;
+      background-color: #dff0d8;
+    }
+    #close {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      cursor: pointer;
+    }
+    </style>
+    <button>알림</button>
+    <!-- <div class="alert">
+      <strong>안녕하세요!</strong> 중요 메시지를 확인하셨습니다.
+    </div> -->
+    <script type="text/javascript">
+      let btn = document.querySelector("button");
+      btn.onclick = function () {
+        let alertDiv = document.createElement("div");
+        alertDiv.classList.add("alert");
+        alertDiv.innerHTML = "<strong>안녕하세요!</strong> 중요 메시지를 확인하셨습니다.<div id='close'>X</div>";
+        this.after(alertDiv);
+    
+        let close = document.getElementById("close");
+        close.onclick = function () {
+          alertDiv.remove();
+        }
+      }
+    
+    </script>
