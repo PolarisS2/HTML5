@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #second{
+        transform-origin: 0 50%;
+    }
+    #minute{
+        transform-origin: 0 50%;
+
+    }
+    #hour{
+        transform-origin: 0 50%;
+        background-size: co;
+
+    }
+</style>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+
+ 
+
+    let div = {
+        divOne: document.createElement('div'),
+        divTwo: document.createElement('div'),
+        divThree: document.createElement('div'),
+        img:document.createElement('img'),
+        
+        init: function(target){
+            target.appendChild(this.divOne);
+            this.divOne.id='hour';
+            target.appendChild(this.divTwo);
+            this.divTwo.id='minute';
+            target.appendChild(this.divThree);
+            this.divThree.id='second';
+            this.style();
+            this.move();
+            
+            target.appendChild(this.img);
+            this.img.id='clock';
+                        
+        },
+
+        // time:function(){
+        //     let date = new Date();
+        //     let hour = date.getHours();
+        //     document.querySelector('#hour').innerHTML = hour;
+
+        //     let minutes = date.getMinutes();
+        //     document.querySelector('#hour').innerHTML = minutes;
+
+        //     let seconds = date.getSeconds();
+        //     document.querySelector('#hour').innerHTML = seconds;
+        // },
+        style:function(){
+            // -----------------시침---------------------------------
+            this.divOne.style.width='150px';
+            this.divOne.style.height='2px';
+            this.divOne.style.backgroundColor='aqua';
+            this.divOne.style.border='solid 2px';
+            this.divOne.style.position='absolute';
+            this.divOne.style.bottom='390px';
+            this.divOne.style.left='900px';
+
+            // ------------------분침----------------------------
+            this.divTwo.style.width='200px';
+            this.divTwo.style.height='2px';
+            this.divTwo.style.backgroundColor='red';
+            this.divTwo.style.border='solid 2px';
+            this.divTwo.style.position='absolute';
+            this.divTwo.style.bottom='390px';
+            this.divTwo.style.left='900px';
+
+            // ------------------초침----------------------------
+            this.divThree.style.width='250px';
+            this.divThree.style.height='2px';
+            this.divThree.style.backgroundColor='black';
+            this.divThree.style.border=' 0.5px';
+            this.divThree.style.position='absolute';
+            this.divThree.style.bottom='390px';
+            this.divThree.style.left='900px';
+            // ------------------시계배경----------------------------
+            this.img.src="https://en.pimg.jp/070/709/647/1/70709647.jpg";
+            this.img.style.width="1000px";
+            this.img.style.marginLeft="382px";
+            
+
+            
+            
+
+        },
+        move:function(){
+            let time = setInterval(function(){
+
+
+                let hourPointer = document.querySelector('#hour');
+                let minutesPointer = document.querySelector('#minute');
+                let secondsPointer = document.querySelector('#second');
+
+                let date = new Date();
+                let hour = date.getHours();
+                let hourangle = hour % 12 *30 +270;
+                // let hourangle = (hour > 12 ? (hour - 12) * 30 : hour * 30) + (minute / 60) * 30;
+                let houranglevalue = `rotate(${hourangle}deg`;
+                // document.querySelector('#hour').innerHTML = "시침" + hour;
+
+                let minutes = date.getMinutes();
+                console.log(minutes);
+                let minutesangle = minutes * 6 + 270;
+                let minutesanglevalue = `rotate(${minutesangle}deg`;
+                // document.querySelector('#minute').innerHTML = "분침" + minutes;
+
+                let seconds = date.getSeconds();
+                let secondsangle = seconds * 6 + 270;
+                let secondsanglevalue = `rotate(${secondsangle}deg`;
+                // document.querySelector('#second').innerHTML = "초침" + seconds;
+
+                secondsPointer.style.transform = secondsanglevalue;
+                minutesPointer.style.transform = minutesanglevalue;
+                hourPointer.style.transform = houranglevalue;
+                
+
+
+            },1000);
+        },
+        
+    };
+    div.init(document.body);
+    
+    
+
+    
+
+</script>
