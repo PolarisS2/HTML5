@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    div.section:nth-child(3) {
+      height: 500px;
+      background: lightpink;
+    }
+    div.section:nth-child(4) {
+      height: 300px;
+      background: lightcyan;
+    }
+    div.section:nth-child(5) {
+      height: 700px;
+      background: lightgreen; 
+    }
+    div.section:nth-child(6) {
+      height: 200px;
+      background: lightpink;
+    }
+    div.section:last-child {
+      height: 900px;
+      background: lavender;
+    }
+    header {
+      height: 100px;
+      background: lightblue;
+    }
+    header > div:first-child {
+      height: 95px;
+    }
+    header > div:last-child {
+      height: 5px;
+      width: 100%;
+      background: #eee;
+    }
+    header > div > div {
+      background: red;
+      width: 0%;
+      height: 100%;
+    }
+    .fixMenu {
+      position: fixed;
+      top: 150px;
+    }
+  </style>
+  <script type="text/javascript">
+    window.addEventListener('load', function() {
+      let progress = document.querySelector("header > div:last-child");
+      let progressTop = progress.offsetTop;
+
+      let secs = document.querySelectorAll('.section');
+      let lis = document.querySelectorAll('.fixMenu > ul > li'); 
+
+      window.addEventListener('scroll', function() {
+        chkReader(progress, progressTop);
+        let index = 0;
+
+        lis.forEach(function(val, i) {
+          val.style.background = 'transparent';
+        });
+
+        secs.forEach(function(sec, i) {
+          if(sec.offsetTop <= window.scrollY && (sec.offsetTop + sec.clientHeight) >= window.scrollY) {
+            lis[index].style.background = "red";
+          }
+          index++;
+        });
+      });
+    });
+
+    function chkReader(progress, progressTop) {
+      let winTop = window.scrollY;
+      let html = document.documentElement;
+      let docHeight = html.scrollHeight;
+      let docViewHeight = html.clientHeight;
+      let totalDocHeight = docHeight - docViewHeight;
+      progress.querySelector("div").style.width = winTop / totalDocHeight * 100 + '%';
+
+      if (progressTop <= winTop) {
+        progress.style.cssText = `
+          position: fixed; 
+          top: 0
+        `;
+      } else {
+        progress.style.cssText = `
+          position: static;
+        `;
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div></div>
+    <div>
+      <div></div>
+    </div>
+  </header>
+  <div class="fixMenu">
+    <ul>
+      <li>11111</li>
+      <li>22222</li>
+      <li>33333</li>
+      <li>44444</li>
+      <li>55555</li>
+    </ul>
+  </div>
+  <div class="section"></div>
+  <div class="section"></div>
+  <div class="section"></div>
+  <div class="section"></div>
+  <div class="section"></div>
+</body>
+</html>

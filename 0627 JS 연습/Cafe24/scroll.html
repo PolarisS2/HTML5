@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title></title>
+
+  <style type="text/css">
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    html {
+
+      height: 200%;
+
+    }
+
+    body, .wrap {
+
+      height: 100%;
+
+    }
+
+    .row {
+
+      height: calc(100% / 2);
+
+      width: calc(100% * 3);
+
+    }
+
+    .row::after {
+
+      content: '';
+
+      display: table;
+
+      clear: both;
+
+    }
+
+    .row > div {
+
+      float: left;
+
+      width: calc(100% / 3);
+
+      height: 100%;
+
+    }
+
+    .row:nth-child(1) > div:first-child {
+
+      background: red;
+
+    }
+
+    .row:nth-child(1) > div:nth-child(2) {
+
+      background: green;
+
+    }
+
+    .row:nth-child(1) > div:last-child {
+
+      background: yellow;
+
+    }
+
+    .row:nth-child(2) > div:first-child {
+
+      background: blue;
+
+    }
+
+    .row:nth-child(2) > div:nth-child(2) {
+
+      background: brown;
+
+    }
+
+    .row:nth-child(2) > div:last-child {
+
+      background: orange;
+
+    }
+
+    .control {
+
+      position: fixed;
+
+      top: 0;
+
+      left: 0;
+
+    }
+
+  </style>
+
+  <script>
+
+    let pos = [], screen = 0, rows = null;
+
+    window.addEventListener('load', function () {
+
+      let btns = document.querySelectorAll("button");
+
+      rows = document.querySelectorAll(".row");
+
+      // let pos = getPos();
+
+      for (let i = 0; i < btns.length; i++) {
+
+        btns[i].onclick = function() {
+
+          screen = i;
+
+          pos = getPos(rows);
+
+          
+
+          window.scrollTo({top: pos[i].y, left: pos[i].x, behavior: "smooth"});
+
+        };
+
+      }
+
+    });
+
+    window.addEventListener('scroll', function() {
+
+      
+
+      if (pos[screen]) {
+
+        if (window.scrollX == pos[screen].x && window.scrollY == pos[screen].y) {
+
+          show(screen);
+
+        }
+
+      }
+
+    });
+
+    function show(screen) {
+
+      unplay();
+
+      switch(screen) {
+
+        case 0:
+
+          alert("첫 번째 화면");
+
+          break;
+
+        case 1:
+
+          alert("두 번째 화면");
+
+          break;
+
+        case 2:
+
+          play();
+
+          break;
+
+        case 3:
+
+          break;
+
+      }
+
+    }
+
+    function play() {
+
+      let div = rows[0].children[2].children[0];
+
+      div.style.textAlign = "center";
+
+      div.style.fontSize = '100px'
+
+      setTimeout(function() {
+
+        div.innerText = 'show';
+
+      }, 500);
+
+    }
+
+    function unplay() {
+
+      let div = rows[0].children[2].children[0];
+
+      div.innerText = '';
+
+    }
+
+    function getPos(rows) {
+
+      let pos = [];
+
+      for (let i = 0; i < rows.length; i++) {
+
+        for(let div of rows[i].children) {
+
+          let intPosY = div.offsetTop;
+
+          let intPosX = div.offsetLeft;
+
+          pos.push({x: intPosX, y: intPosY});
+
+        }
+
+      }
+
+      return pos;
+
+    }
+
+  </script>
+
+</head>
+
+<body>
+
+  <div class="wrap">
+
+    <div class="row">
+
+      <div>
+
+        <div></div>
+
+      </div>
+
+      <div>
+
+        <div></div>
+
+      </div>
+
+      <div>
+
+        <div></div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div></div>
+
+      <div></div>
+
+      <div></div>
+
+    </div>
+
+  <div>
+
+  <div class="control">
+
+    <div><button>1</button><button>2</button><button>3</button></div>
+
+    <div><button>4</button><button>5</button><button>6</button></div>
+
+  </div>
+
+</body>
+
+</html>

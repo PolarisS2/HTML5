@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .wrap{
+        width: 85%;
+        margin: 0 auto;
+    }
+    ul,ol{
+        list-style: none;
+    }
+    .header{
+        padding: 25px;
+        background-color: gray;
+        text-align: center;
+    }
+    
+    /* .main { 
+        overflow: hidden;
+    } */
+    .main::after{
+        clear: both;
+        display: table;
+        content: '';
+
+    }
+    .aside, .container {
+        float: left;
+
+    }
+    .aside {
+        width: 100px;
+    }
+    .container {
+        width: calc(100% -100px);
+
+    }
+    .footer{
+        padding: 25px;
+        background-color: gray;
+        text-align: center;
+    }
+
+</style>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <h1>Cities</h1>
+
+        </div>
+
+
+        <div class="main">
+            <div class="aside">
+                <ul>
+                    <li>London</li>
+                    <li>Paris</li>
+                    <li>Tokyo</li>
+                </ul>
+
+            </div>
+
+            <div class="container">
+                <section>
+                    <h1>London</h1>
+                    <article>
+                        <p>ddddddddddddddddasdasdjs르티ㅏㅡ피ㅏㅡㄴㅇ라aklfjlkfjkdsljfkldsjfkldsfj kljflksdjflksdjf</p>
+                        <p>dhfjjfjcnmcksdn ncnsklndvkljnfldnfdsjn nlksd이리ㅐ타ㅡㄹ;ㅣㅣ가ㅡnlskdmv.xkdmvklm</p>
+                    </article>
+                </section>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+            <h3>footer</h3>
+
+        </div>
+    </div>
+</body>
+</html>
