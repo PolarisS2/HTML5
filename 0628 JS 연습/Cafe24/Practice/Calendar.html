@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    
+  <style>
+    table {
+      border-collapse: collapse; 
+    }
+
+    th {
+      font-weight: bold;
+      background-color: #E6E6E6;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+
+    <button>이전</button>
+    <button>다음</button>
+    
+    
+    <div id="calendar"></div>
+    
+
+  <script>
+    
+
+
+      
+        let date = new Date();
+        let calYear = date.getFullYear();
+        let calMonth = date.getMonth() + 1;
+        let calDay = date.getDate();
+
+        let month_Last_Date = new Date(calYear, calMonth, 0);
+        let calMonth_Last_Date = month_Last_Date.getDate(); //월 마지막일
+
+        let month_Start_Day = new Date(calYear, date.getMonth(),1);
+        let cal_Month_Start_Day = month_Start_Day.getDay() //월 시작요일
+
+        let calWeekCount = Math.ceil((cal_Month_Start_Day + calMonth_Last_Date) / 7); //한주 카운트
+
+        var html = "";
+
+        html += "<table>";
+        for (var index1 = 0; index1 < calWeekCount; index1++) {
+
+			html += "<tr>";
+			for (var index2 = 0; index2 < 7; index2++) {
+				html += "<td></td>";
+				}
+				html += "</tr>";
+			}
+			html += "</table>";
+		
+
+        var html = "";
+        html += "<table>";
+        // 위치
+        var calendarPos = 0;
+        // 날짜
+        var calendarDay = 0;
+        for (var index1 = 0; index1 < calWeekCount; index1++) {
+            html += "<tr>";
+            for (var index2 = 0; index2 < 7; index2++) {
+                html += "<td >";
+                if (cal_Month_Start_Day <= calendarPos) {
+                    calendarDay++;
+                    html += "<span>" + calendarDay + "</span>";
+                }
+                html += "</td>";
+                calendarPos++;
+            }
+            html += "</tr>";
+        }
+        html += "</table>";
+        document.querySelector('#calendar').innerHTML = html;
+
+
+        var html = "";
+        html += "<table style=\"border-collapse: collapse;\">";
+        // 위치
+        var calendarPos = 0;
+        // 날짜
+        var calendarDay = 0;
+        for (var index1 = 0; index1 < calWeekCount; index1++) {
+            html += "<tr>";
+            for (var index2 = 0; index2 < 7; index2++) {
+                html += "<td>";
+                if (cal_Month_Start_Day <= calendarPos && calendarDay < calMonth_Last_Date) {
+                    calendarDay++;
+                    html += "<span>" + calendarDay + "</span>";
+                }
+                html += "</td>";
+                calendarPos++;
+            }
+            html += "</tr>";
+        }
+        html += "</table>";
+        document.querySelector('#calendar').innerHTML = html;
+
+
+        var html = "";
+        html += "<table>";
+        html += "<caption>" + calMonth + "월</caption>";
+        html += "<thead>";
+        html += "<tr>";
+        html += "<th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>";
+        html += "</tr>";
+        html += "</thead>";
+        html += "<tbody>";
+        // 위치
+        var calendarPos = 0;
+        // 날짜
+        var calendarDay = 0;
+        for (var index1 = 0; index1 < calWeekCount; index1++) {
+            html += "<tr>";
+            for (var index2 = 0; index2 < 7; index2++) {
+                html += "<td";
+                if (cal_Month_Start_Day <= calendarPos && calendarDay < calMonth_Last_Date) {
+                    calendarDay++;
+                    html += "<span>" + calendarDay + "</span>";
+                }
+                html += "</td>";
+                calendarPos++;
+            }
+            html += "</tr>";
+        }
+        html += "</tbody>";
+        html += "</table>";
+        document.querySelector('#calendar').innerHTML = html;
+
+
+        var html = "";
+        html += "<table>";
+        html += "<caption>" + calMonth + "월</caption>";
+        html += "<thead>";
+        html += "<tr>";
+        html += "<th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>";
+        html += "</tr>";
+        html += "</thead>";
+        html += "<tbody>";
+        // 위치
+        var calendarPos = 0;
+        // 날짜
+        var calendarDay = 0;
+        for (var index1 = 0; index1 < calWeekCount; index1++) {
+            html += "<tr>";
+            for (var index2 = 0; index2 < 7; index2++) {
+                html += "<td>";
+                if (cal_Month_Start_Day <= calendarPos && calendarDay < calMonth_Last_Date) {
+                    calendarDay++;
+                    html += "<span style=\"display: block; padding: 10px 10px;";
+                    if (calendarDay == calDay) {
+                        html += " border: 1px solid red; border-radius: 50%; color: white; background-color: red;";
+                    }
+                    html += "\">" + calendarDay + "</span>";
+                }
+                html += "</td>";
+                calendarPos++;
+            }
+            html += "</tr>";
+        }
+        html += "</tbody>";
+        html += "</table>";
+        document.querySelector('#calendar').innerHTML = html;
+
+
+
+
+
+
+
+        
+
+  </script>
+
+</body>
+</html>
