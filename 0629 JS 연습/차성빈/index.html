@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- css 경로 지정 -->
+    <link rel="stylesheet" href="asset/css/main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/8d9741eb42.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="media">
+    <div id="left">
+        <img id="left_img" src="./asset/img/1.jpg" alt="수정중입니다">
+    </div>
+    
+    <div id="container">
+
+        
+
+        <div id="nav" >
+            <i id="nav_icon" onclick="openNav()" class="fa-solid fa-bars"></i>
+        </div>
+
+        <div id="mySidebar" class="mySidebar">
+        <i id="side_nav" class="fa-solid fa-xmark" onclick="closeNav()"></i>
+            <ul>
+                <li><a href="#self" onclick="closeNav()">Home</a></li>
+                <li><a href="#portfolio" onclick="closeNav()">Portfolio</a></li>
+                <li><a href="#about" onclick="closeNav()">About</a></li>
+                <li><a href="#contact_me" onclick="closeNav()">Contact</a></li>
+            </ul>
+        </div>
+            
+            
+
+        <div id="right">
+            <div id="self">
+                <h1>Seong Bin</h1>
+                <p>Photographer and Web Designer.</p>
+                <button id="self_btn"><i class="fa-solid fa-download"></i>&nbsp;Download Resume</button>
+            </div>
+
+            <div id="portfolio">
+                <p>My Portfolio</p>
+                <hr>
+                <div id="portfolio_img">
+                    <div id="wedding">
+                        <img src="./asset/img/2.jpg" alt="수정중입니다">
+                        <img src="./asset/img/3.jpg" alt="수정중입니다">
+                        <img src="./asset/img/4.jpg" alt="수정중입니다">
+                    </div>
+
+                    <div id="wedding2">
+                        <img src="./asset/img/5.jpg" alt="수정중입니다">
+                        <img src="./asset/img/2.jpg" alt="수정중입니다">
+                        <img src="./asset/img/6.jpg" alt="수정중입니다">
+                        <img src="./asset/img/7.jpg" alt="수정중입니다">
+                    </div>
+                </div>
+            </div>
+
+            <div id="about">
+                <p>About</p>
+                <hr>
+                <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+            <div id="myskill">
+                <p>My Skills</p>
+                <p>Photography</p>
+                <div id="Photography">
+                    <div id="Photography_per">
+                        95%
+                    </div>
+                </div>
+
+                <p>Web Design</p>
+                <div id="Web_Design">
+                    <div id="Web_Design_per">
+                        85%
+                    </div>
+                </div>
+
+                <p>Photoshop</p>
+                <div id="Photoshop">
+                    <div id="Photoshop_per">
+                        80%
+                    </div>
+                </div>
+
+                <div id="skill_table">
+                    <div>
+                        <span>14+</span>
+                        <br>
+                        partners
+                    </div>
+
+                    <div>
+                        <span>55+</span>
+                        <br>
+                        Projects Done
+                    </div>
+
+                    <div>
+                        <span>89+</span>
+                        <br>
+                        Happy Clients
+                    </div>
+
+                    <div>
+                        <span>150+</span>
+                        <br>
+                        Meetings
+                    </div>
+
+                    
+                </div>
+                <button id="dw_btn"><i class="fa-solid fa-download"></i>&nbsp;Download Resume</button>
+                <!-- <input id="dw_btn" type="button" value="Download Resume"> -->
+
+            </div>
+
+
+            <div id="My_Reputation">
+                <p>My Reputation</p>
+                <div id="My_Reputation_img">
+                    <img id="My_Reputation_img1" src="./asset/img/8.jpg" alt="수정중입니다">
+                    &nbsp;&nbsp;<span>Chandler Bing.</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Web Designer.</span> 
+                    <p>&nbsp;&nbsp;Jane Doe is just awesome. I am so happy to have met her!</p>
+                    <!-- <p><span>Chandler Bing.</span>Web Designer.</p>
+                    <p>Jane Doe is just awesome. I am so happy to have met her!</p> -->
+                </div>
+
+                <div id="My_Reputation_img_2">
+                    <img id="My_Reputation_img2" src="./asset/img/9.jpg" alt="수정중입니다">
+                    &nbsp;&nbsp;<span>Chris Fox.</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>CEO at Mighty Schools.</span> 
+                    <p>&nbsp;&nbsp;Jane Doe saved us from a web disaster.</p>
+                    <!-- <p><span>Chandler Bing.</span>Web Designer.</p>
+                    <p>Jane Doe is just awesome. I am so happy to have met her!</p> -->
+                </div>
+
+                <div id="My_Reputation_img_3">
+                    <img id="My_Reputation_img3" src="./asset/img/10.jpg" alt="수정중입니다">
+                    &nbsp;&nbsp;<span>Rebecca Flex.</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>CEO at Company.</span> 
+                    <p>&nbsp;&nbsp;No one is better than Jane Doe.</p>
+                    <!-- <p><span>Chandler Bing.</span>Web Designer.</p>
+                    <p>Jane Doe is just awesome. I am so happy to have met her!</p> -->
+                </div>
+            </div>
+
+
+
+
+            <div id="My_Price">
+                <p>My Price</p>
+                <ul id="basic">                    
+                    <li id="basic_title">Basic</li>
+                    <li>Web Design</li>
+                    <li>Photography</li>
+                    <li>5GB Storage</li>
+                    <li>Mail Support</li>
+                    <li>
+                        <span>$ 10</span>
+                        <br>
+                        per month
+                    </li>
+                    <li id="title">
+                        <input id="input_btn" type="button" value="Sign Up">
+                    </li>
+                </ul>
+
+                <ul id="pro">
+                    <li id="pro_title">pro</li>
+                    <li>Web Design</li>
+                    <li>Photography</li>
+                    <li>5GB Storage</li>
+                    <li>Mail Support</li>
+                    <li>
+                        <span>$ 10</span>
+                        <br>
+                        per month
+                    </li>
+                    <li id="title_2">
+                        <input id="input_btn_2" type="button" value="Sign Up">
+                    </li>
+                </ul>
+            
+            </div>
+
+            <div id="contact_me">
+                <p>Contact Me</p>
+                <hr>
+                <div id="how">
+                    <p><i class="fa-solid fa-location-dot"></i>  Chicago, US</p>
+                    <p><i class="fa-solid fa-phone"></i> Phone: +00 151515</p>
+                    <p><i class="fa-solid fa-envelope"></i>Email: mail@mail.com</p>
+                    <img src="./asset/img/11.jpg" alt="수정중입니다">
+                </div>
+                <div id="send">
+                    <p>Lets get in touch. Send me a message:</p>
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Subject">
+                    <input type="text" placeholder="Message">
+                    <button><i class="fa-solid fa-paper-plane"></i>SEND MESSAGE</button>
+                </div>
+                
+
+            </div>
+
+            <div id="footer">
+
+                <div id="icon">
+                    <p>
+                        <i class="fa-brands fa-facebook-square"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa fa-snapchat w3-hover-opacity"></i>
+                        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa fa-linkedin w3-hover-opacity"></i>
+                    </p>
+                    <span id="footer_span">Powered by w3.css</span>
+                </div>
+            </div>
+
+
+        </div>
+
+   
+
+
+
+
+
+
+    </div>
+</div>
+<script src="asset/js/main.js"></script>
+</body>
+</html>
+
+
