@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+      overflow-y: hidden;
+    }
+    .wrap {
+      width: 2000px;
+      height: 100%;
+    }
+    .wrap::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+    .section {
+      width: 500px;
+      float: left;
+      height: 100%;
+    }
+    .section:nth-child(1) {
+      background: red;
+    }
+    .section:nth-child(2) {
+      background: green;
+    }
+    .section:nth-child(3) {
+      background: blue;
+    }
+    .section:nth-child(4) {
+      background: orange;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+  </div>
+  <script type="text/javascript">
+    window.addEventListener('wheel', function(e) {
+      if (e.target.className != 'section') return;
+      console.log(e.deltaY);
+      e.preventDefault();
+      document.body.scrollLeft -= e.deltaY;
+    }, {passive: false});
+  </script>
+</body>
+</html>

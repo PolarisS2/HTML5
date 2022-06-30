@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            list-style: decimal;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="item" autofocus onkeyup="if(window.event.keyCode==13){addItem()}">
+    <button onclick="addItem()">입력</button>
+    
+
+    <ul id="wordlist">
+        
+    </ul>
+
+</body>
+</html>
+<script>
+
+    function addItem() {
+        
+        var word = document.getElementById('item').value;
+        var list = document.getElementById('wordlist');
+        var listitem = document.createElement('li');
+        listitem.innerText = word;
+        list.appendChild(listitem);
+        document.getElementById('item').value='';
+
+        // ----------------------버튼 스타일---------------------
+        var xbtn =document.createElement('button');
+        xbtn.id = "close";
+        xbtn.style.width="50px";
+        xbtn.style.height="20px";
+        xbtn.innerText="삭제";
+        xbtn.style.textAlign="center";
+
+        // -----------------------------삭제버튼 클릭 이벤트---------
+        xbtn.onclick = function(e){
+        var pnode =e.target.parentNode;
+        list.removeChild(pnode);
+        }
+        listitem.appendChild(xbtn);  
+        
+        
+        }
+        
+
+
+        
+
+
+
+
+</script>
+
+
+

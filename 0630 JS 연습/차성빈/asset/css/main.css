@@ -1,0 +1,484 @@
+*{
+    margin: 0 auto;
+}
+#container{
+    
+    margin-left: 35%;
+    margin-right: 10px;
+}
+#left{
+    position: fixed;
+    width: 40%;
+    height: 100vh;
+}
+#left_img{
+    width: 100%;
+    height: 100%;
+}
+#left::after{
+    clear: both;
+    content: '';
+    display: table;
+}
+
+#nav{
+    float: right;
+    margin-top: 20px;
+}
+#nav_icon{
+    position: fixed;
+    right: 0;
+    font-size: 40px;
+}
+#nav::after{
+    clear: both;
+    content: '';
+    display: table;
+}
+
+#mySidebar{
+    display: none;
+    list-style: none;
+    height: 100vh;
+    position: fixed;
+    
+    
+}
+
+#mySidebar ul > li{
+    margin: 30px 30px 30px 30px;
+    font-size: 40px;
+    list-style: none;
+    text-align: center;
+    margin-right: 300px;
+
+}
+#mySidebar ul > li:nth-child(1){
+    margin-top: 150px;
+}
+#side_nav{
+    margin-right: 20%;
+    position: absolute;
+    right: 0;
+    font-size: 50px;
+}
+#mySidebar > ul > li > a{
+    color: white;
+    text-decoration: none;
+}
+
+#right{
+    /* text-align: center; */
+    padding-top: 140px;
+    font-size: xx-large;
+    margin-right: 3%;
+    
+}
+#self{
+    text-align: center;
+    margin-bottom: 15%;
+}
+#self_btn{
+    height: 40px;
+}
+#self > p{
+    font-size: smaller;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#portfolio{
+    margin-left: 12%;
+    
+}
+#portfolio::after{
+    clear: both;
+    content: '';
+    display: table;
+}
+
+#portfolio_img{
+    float: left;
+    margin-top: 10px;
+}
+#wedding{
+    float: left;
+    width: 50%;
+}
+#wedding > img{
+    width: 490px;
+    
+}
+#wedding::after{
+    clear: both;
+    content: '';
+    display: table;
+}
+#wedding2{
+    float: left;
+    width: 50%;
+}
+#wedding2 > img{
+    width: 480px;
+    height: 370px;
+}
+#wedding2::after{
+    clear: both;
+    content: '';
+    display: table;
+}
+#about{
+    margin-left: 11%;
+    font-size: smaller;
+    margin-top: 30px;
+}
+#about > P{
+    margin-top: 20px;
+}
+#myskill{
+    margin-left: 11%;
+    margin-top: 40px;
+    
+
+}
+#myskill > p{
+    margin: 15px 0 0 0;
+}
+#Photography{
+    background-color: lightgray;
+    width: 100%;
+    height: 40px;
+}
+#Photography_per{
+    float: left;
+    background-color: bisque;
+    width: 95%;
+    height: 40px;
+    text-align: center;
+}
+#Web_Design{
+    background-color: lightgrey;
+    width: 100%;
+    height: 40px;
+}
+#Web_Design_per{
+    float: left;
+    background-color: bisque;
+    width: 85%;
+    height: 40px;
+    text-align: center;
+}
+#Photoshop{
+    background-color: lightgrey;
+    width: 100%;
+    height: 40px;
+}
+#Photoshop_per{
+    float: left;
+    background-color: bisque;
+    width: 80%;
+    height: 40px;
+    text-align: center;
+}
+#skill_table{
+    margin-top: 40px;
+    display: flex;
+    color: white;
+    background-color: lightgrey;  
+    text-align: center;  
+}
+#dw_btn{
+    margin-top: 30px;
+    width: 180px;
+    height: 40px;
+}
+#My_Reputation{
+    margin-left: 11%;
+    margin-top: 40px;
+}
+#My_Reputation{
+    clear: both;
+    content: '';
+    display: table;
+}
+#My_Reputation_img,#My_Reputation_img_2,#My_Reputation_img_3 {
+    margin-top: 40px;
+    font-size: 20px;
+    float: left;
+    width: 100%;
+}
+#My_Reputation_img,#My_Reputation_img_2,#My_Reputation_img_3 > p{
+    margin: 10px 0 0 0;
+    font-size: small;
+}
+
+#My_Reputation_img1{
+    float: left;
+    width: 80px; 
+    border-radius: 45px;
+}
+
+#My_Reputation_img2{
+    float: left;
+    width: 80px; 
+    border-radius: 45px;
+}
+
+#My_Reputation_img3{
+    float: left;
+    width: 80px; 
+    border-radius: 45px;
+}
+
+
+
+#My_Price{
+    float: left;
+    margin-top: 40px;
+    margin-left: 11%;
+    width: 80%;
+    
+}
+#My_Price{
+    clear: both;
+    content: '';
+    display: table;
+}
+
+#basic{
+    margin-top: 30px;
+    float: left;
+    width: 40%;
+    list-style: none;
+    text-align: center;
+    font-size: smaller;
+
+}
+#basic > li{
+    border: 1px solid;
+}
+#pro{
+    margin-top: 30px;
+    float: left;
+    width: 40%;
+    list-style: none;
+    text-align: center;
+    font-size: smaller;
+    /* box-shadow: 10px 10px #f00;; */
+}
+#pro > li {
+    border: 1px solid;
+}
+#title, #title_2{
+    background-color: lightgrey;
+    height: 80px;
+}
+#title > input, #title_2 > input{
+    width: 100px;
+    height: 40px;
+    margin-top: 25px;
+}
+#basic_title{
+    background-color: gray;
+    color: white;
+    height: 70px;
+    padding-top: 30px;
+}
+#pro_title{
+    background-color: black;
+    color: white;
+    height: 70px;
+    padding-top: 30px;
+}
+#input_btn:hover,#input_btn_2:hover{
+    background-color: black;
+    color: white;
+
+}
+#contact_me{
+    margin-left: 11%;
+    margin-top: 50px;
+}
+#how{
+    float: left;
+    margin-top: 20px;
+    width: 80%;
+}
+#how > img{
+    width: 100%;
+}
+#how > p{
+    font-size: 20px;
+    margin: 10px 10px 10px 0;
+}
+#how::after{
+    clear: both;
+    content: '';
+    display: table;
+}
+#send{
+    float: left;
+    margin-top: 50px;
+    
+}
+#send > p{
+    margin: 10px 10px 10px 0;
+}
+#send::after{
+    clear: both;
+    content: '';
+    display: table;
+
+}
+#send > input{
+    width: 100%;
+    height: 50px;
+}
+#send > button{
+    height: 40px;
+}
+#footer{
+    float: left;
+    width: 100%;
+    height: 200px;
+    margin-left: 3.5%;
+    margin-top: 70px;
+    background-color: lightgray;
+}
+#footer_span{
+    font-size: 15px;
+}
+#icon{
+    text-align: center;
+    margin-top: 5%;
+
+}
+
+.mySidebar{
+    position:absolute;
+    animation: animateright 0.5s;
+}@keyframes animateright{
+    from{
+        right:-500px;opacity:0
+    } to{
+        right:0;opacity:1
+    }
+}
+
+@media screen and (min-device-width : 320px) and (max-device-width : 480px){
+    *{
+        margin: 0 auto;
+        width: 480px;
+        text-align: center;
+    }
+  .media{
+    text-align: center;
+    width: 480px;
+    
+  }
+  #left{
+    position: relative;
+    height: 50%;
+    margin-left: 45%;
+    top: 100px;
+  }
+  #container{
+    margin-left: -35%;
+    
+  }
+
+  #right{
+    margin-left: 40%;
+
+  }
+  #nav{
+    position: fixed;
+    top: 0;
+  }
+  #mySidebar{
+    width: 100%;
+    margin-left: 45%;
+    top: 0;
+    height: 100%;
+  }
+  #mySidebar > ul > li > a{
+    margin-right: 20%;
+  }
+  #side_nav{
+    position: relative;
+    margin-left: 90%;
+  }
+  
+  .mySidebar{
+    position:absolute;
+    animation: animateright 0.5s;
+}@keyframes animateright{
+    from{
+        right:-500px;opacity:0
+    } to{
+        right:-100px;opacity:1
+    }
+}
+  
+  
+  #wedding2 > img{
+    width: 240px;
+    height: 370px;
+}
+#My_Price{
+    margin-top: 40px;
+}
+#basic{
+    margin-top: 30px;
+    width: 50%;
+    list-style: none;
+    text-align: center;
+    font-size: smaller;
+
+}
+#basic > li{
+    border: 1px solid;
+}
+#contact_me{
+    margin-left: 15%;
+    margin-top: 50px;
+}
+
+#how > img{
+    margin-left: 15%;
+    width: 100%;
+}
+#send{
+    
+    margin-left: 3%;
+    
+}
+#send > p{
+    margin-bottom: 5px;
+}
+#footer{
+    background-color: white;
+    
+
+}
+i{
+    width: 40px;
+    
+}
+#icon{
+    text-align: center;
+    margin-left: 10%;
+
+}
+#icon > span{
+    margin-left: 5%;
+    
+}
+#self{
+    margin-left: 15%;
+}
+
+  
+ 
+    
+}
