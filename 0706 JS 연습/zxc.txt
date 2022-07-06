@@ -1,0 +1,30 @@
+INSERT INTO Users (name, phone, email, birthday) VALUES ('감길동', '0102687596', 'test3@naver.com', '1997-12-07');
+#set @email := 'test3@naver.com';
+SET @userid := Last_insert_id();
+#Like_Genre
+SELECT @cnt2 := COUNT(name) FROM Genre;
+SELECT @ran2 := CAST(rand() * @cnt2 AS UNSIGNED);
+SELECT @genre := id FROM Genre WHERE id = @ran2;
+Insert into Like_Genre (User_id, Genre_id) values (@userid, @genre);
+#Like_Genre
+SELECT @cnt2 := COUNT(name) FROM Genre;
+SELECT @ran2 := CAST(rand() * @cnt2 AS UNSIGNED);
+SELECT @genre := id FROM Genre WHERE id = @ran2;
+Insert into Like_Genre (User_id, Genre_id) values (@userid, @genre);
+#Like_Genre
+SELECT @cnt2 := COUNT(name) FROM Genre;
+SELECT @ran2 := CAST(rand() * @cnt2 AS UNSIGNED);
+SELECT @genre := id FROM Genre WHERE id = @ran2;
+Insert into Like_Genre (User_id, Genre_id) values (@userid, @genre);
+#Like_Author
+SELECT @cnt := COUNT(name) FROM Author WHERE name != '';
+SELECT @blank := COUNT(name) FROM Author WHERE name = '';
+SELECT @ran := CAST(rand() * @cnt AS UNSIGNED);
+SELECT @author := id FROM Author WHERE id = @ran + @blank;
+Insert into Like_Author (User_id, Author_id) values (@userid, @author);
+#Like_Author
+#SELECT @cnt := COUNT(name) FROM Author WHERE name != '';
+#SELECT @blank := COUNT(name) FROM Author WHERE name = '';
+#SELECT @ran := CAST(rand() * @cnt AS UNSIGNED);
+#SELECT @author := id FROM Author WHERE id = @ran + @blank;
+#Insert into Like_Author (User_id, Author_id) values (@userid, @author);
