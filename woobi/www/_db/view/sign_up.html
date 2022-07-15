@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<style>
+    *{
+        margin: 0 auto;
+        /* text-align: center; */
+    }
+    #container{
+        margin-top: 5%;
+        text-align: center;
+        
+    }
+    #container >form > div{
+        margin-top: 30px;
+    }
+    #container >form > div > h3{
+        margin-bottom: 5px;
+        
+    }
+
+    #container >form > div > input{
+        width: 200px;
+        height: 40px;
+    }
+    #container > form > input{
+        margin-top: 30px;
+    }
+    
+
+
+
+</style>
+<body>
+    
+    <div id="container">
+        <form action="sign_up_ok.php" method="post">
+            <div>
+                <h3>이름</h3>
+                <input type="text" placeholder="이름" name="name" required>
+            </div>
+
+            <div>
+                <h3>아이디</h3>
+                <input type="text" placeholder="아이디" name="id" required>
+            </div>
+
+            <div>
+                <h3>비밀번호</h3>
+                <input type="text" placeholder="비밀번호" name="pw" required>
+            </div>
+
+            <div>
+                <h3>비밀번호 확인</h3>
+                <input type="text" placeholder="비밀번호" name="cpw" required>
+            </div>
+
+            <div>
+                <h3>나이</h3>
+                <input type="text" placeholder="나이" name="age" required>
+            </div>
+
+            <input type="submit" value="가입완료">
+
+            
+        </form>
+
+
+    </div>
+    
+    
+</body>
+</html>

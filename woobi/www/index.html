@@ -4,71 +4,50 @@
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인화면</title>
+    <title>로그인</title>
 </head>
-
 <style>
     *{
         margin: 0 auto;
-    }
-    table{
-        border-bottom: 1px solid #444444;
-        border-collapse: collapse;
         text-align: center;
-
-    }
-    tr{
-        border-bottom: 1px solid #444444;
-        padding: 10px;
-        text-align: center;
-    }
-    td{
-        border-bottom: 1px solid #efefef;
-        padding: 10px;
-        text-align: center;
-    }
-    #no{
-        width: 50px;
-    }
-    #title{
-        width: 500px;
-    }
-    #creater{
-        width: 100px;
-    }
-    #day{
-        width: 200px;
-    }
-    #view{
-        width: 50px;
-    }
-    .text{
-        text-align:center;
-        padding-top:20px;
-        color:#000000
     }
 
-    
+    div > p{
+        font-size: 300px;
+        font-weight: 900;
+    }
+    div > div > p{
+        font-size: 100px;
+        margin-top: 100px;
+    }
+    #container > div > p > a:hover{
+        background-color: lightgray;
+        opacity: 50%;
+    }
+    /* #container{
+        margin-top: 20%;
+    }
+    input{
+        margin-top: 10px;
+    } */
 </style>
 <body>
-    <table>
-        <tr>
-            <td id="no">번호</td>
-            <td id="title">제목</td>
-            <td id="creater">작성자</td>
-            <td id="day">날짜</td>
-            <td id="view">조회수</td>
-        </tr>
-    </table>
-    
-    <!-- <div>
-        <a href="./_db/create.php" id="move"><button>글쓰기</button></a>
-    </div> -->
+    <div id="container">
+        <p>UI / UX</p>
 
-    <div class = text>
-        <button onClick="location.href='./_db/view/write.html'">글쓰기</button>
+        <div>
+            <p>내용을 보시려면 <a href="./_db/sign_in.php">여기</a>를 누르세요</p>
+        </div>
+
+        <!-- <form action="./_db/sign_in.php" method="post">
+            I D : <input type="text">
+            <br>
+            PW : <input type="text">
+            <br>
+            <button type="submit">로그인</button>
+            <a href="./_db/sign_up.php" onclick=""  type="submit">회원가입</a>
+        </form> -->
     </div>
 
 </body>
 </html>
-
