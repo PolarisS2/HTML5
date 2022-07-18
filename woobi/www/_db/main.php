@@ -6,35 +6,30 @@ if ($_SESSION) {
 } else {
     echo "
     <script>
-    
         location.href='sign_in.php';
     </script>
     ";
 }
-$no = $_POST['no'];
-$sql = "select
-            no,
-            title,
-            creater,
-            day,
-            view
-        from border
-        where no = '$no'";
+
+$sql = "select no, title, creater, day, view,text
+from border ";
 
 $result = $conn -> query($sql);
+// var_dump($result);
 $data = mysqli_fetch_assoc($result);
+
 
 if($data) {
         
 }
-//  else {    
-//     echo "
-//     <script>
-//         alert('비정상 접근')
-//         location.href='index.php';        
-//     </script>
-//     ";
-// }
+else {
+    echo "
+    <script>
+        alert('비정상 접근')
+        location.href='main.php';
+    </script>
+    ";
+}
 
 ?>
 <html>
@@ -60,24 +55,50 @@ if($data) {
     #container{
         text-align: center;
     }
+    table,tr,td{
+        border: 1px solid;
+        border-collapse: collapse;
+    }
 
 </style>
 <body>
-    <div>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>날짜</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
 
-    </div>
-<table>
-        <tr>
-            <td id="no">번호</td>
-            <td id="title">제목</td>
-            <p>
-    <?php echo $data['title'];?>
-    </p>
-            <td id="creater">작성자</td>
-            <td id="day">날짜</td>
-            <td id="view">조회수</td>
-        </tr>
 
+        <tbody>
+            <?php while($row = mysqli_fetch_assoc($result)){ ?>
+            <tr>
+                <td>
+                    <?php  echo $row['no']?>
+                </td>
+
+                <td>
+                    <a href="text.php"><?php  echo $row['title']?></a>
+                </td>
+
+                <td>
+                    <?php  echo $row['creater']?>
+                </td>
+
+                <td>
+                    <?php  echo $row['day']?>
+                </td>
+
+                <td>
+                    <?php  echo $row['view']?>
+                </td>
+            </tr>
+        <?php }?>
+        </tbody>
     </table>
 
     <div class = text>

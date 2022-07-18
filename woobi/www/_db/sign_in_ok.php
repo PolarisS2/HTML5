@@ -20,6 +20,7 @@ if($db_pw){
     $_SESSION['no'] = $db_pw['no'];
     $_SESSION['pw'] = $db_pw['pw'];
     $_SESSION['id'] = $db_pw['id'];
+    $_SESSION['name'] = $db_pw['name'];
     
     echo"
     <script>

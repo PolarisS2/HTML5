@@ -31,15 +31,19 @@
 
 </style>
 <body>
-    <div id="container">
-    <label>제목</label> &nbsp;&nbsp;&nbsp;
-    <input type="text" id="title" name="title">
-    <br>
-    <label>내용</label> &nbsp;&nbsp;&nbsp;
-    <input type="text" id="text" name="text">
-    <br>
-    <a href="main.php"><input type="submit" value="작성완료" name="fin"></a>
-    </div>
+    <form action="write_ok.php" method="post">
+        <div id="container">
+        <label>제목</label> &nbsp;&nbsp;&nbsp;
+        <input type="text" id="title" name="title">
+        <br>
+        <label>내용</label> &nbsp;&nbsp;&nbsp;
+        <input type="text" id="text" name="text">
+        <br>
+        <a href="main.php">
+            <input type="submit" value="작성완료">
+        </a>
+        </div>
+    </form>
     
 
     
